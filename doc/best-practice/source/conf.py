@@ -30,9 +30,9 @@ otcdocs_repo_name = 'opentelekomcloud-docs/function-graph'
 
 # Those variables are needed for indexing into OpenSearch
 otcdocs_doc_environment = 'public'
-otcdocs_doc_link = '/function-graph/umn/'
-otcdocs_doc_title = 'User Guide'
-otcdocs_doc_type = 'umn'
+otcdocs_doc_link = '/function-graph/best-practice/'
+otcdocs_doc_title = 'Best Practice'
+otcdocs_doc_type = 'best-practice'
 otcdocs_service_category = 'compute'
 otcdocs_service_title = 'FunctionGraph'
 otcdocs_service_type = 'fg'
@@ -92,7 +92,7 @@ html_theme_options = {
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
 
-html_title = "FunctionGraph - User Guide"
+html_title = "FunctionGraph - Best Practice"
 
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -106,7 +106,7 @@ html_copy_source = False
 # -- Options for PDF output --------------------------------------------------
 latex_documents = [
     ('index',
-     'fg-umn.tex',
-     u'FunctionGraph - User Guide',
+     'fg-best-practice.tex',
+     u'FunctionGraph - Best Practice',
      u'OpenTelekomCloud', 'manual'),
 ]
