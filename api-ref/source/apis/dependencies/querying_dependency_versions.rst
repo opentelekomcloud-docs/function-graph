@@ -174,7 +174,7 @@ Query dependencies of the current tenant.
 
 .. code-block:: text
 
-   GET https://{Endpoint}/v2/{project_id}/fgs/ListDependencies?marker=0&maxitems=400
+   GET /v2/{project_id}/fgs/dependencies/{depend_id}/version?marker=0&maxitems=400
 
 Example Responses
 -----------------

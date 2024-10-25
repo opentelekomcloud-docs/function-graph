@@ -49,11 +49,11 @@ Request Parameters
 
 .. table:: **Table 3** Request body parameters
 
-   ========= ========= ====== ======================================
-   Parameter Mandatory Type   Description
-   ========= ========= ====== ======================================
-   ``-``     Yes       Object Request body for executing a function.
-   ========= ========= ====== ======================================
+   ================ ========= ====== ======================================
+   Parameter        Mandatory Type   Description
+   ================ ========= ====== ======================================
+   {Customized_key} Yes       Object Request body for executing a function.
+   ================ ========= ====== ======================================
 
 Response Parameters
 -------------------
