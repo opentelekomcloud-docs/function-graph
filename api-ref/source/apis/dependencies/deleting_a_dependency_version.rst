@@ -45,7 +45,7 @@ Request Parameters
 Response Parameters
 -------------------
 
-**Status code: 401**
+**Status code: 400**
 
 .. table:: **Table 3** Response body parameters
 
@@ -56,7 +56,7 @@ Response Parameters
    error_msg  String Error message.
    ========== ====== ==============
 
-**Status code: 403**
+**Status code: 401**
 
 .. table:: **Table 4** Response body parameters
 
@@ -67,7 +67,7 @@ Response Parameters
    error_msg  String Error message.
    ========== ====== ==============
 
-**Status code: 404**
+**Status code: 403**
 
 .. table:: **Table 5** Response body parameters
 
@@ -78,9 +78,20 @@ Response Parameters
    error_msg  String Error message.
    ========== ====== ==============
 
-**Status code: 500**
+**Status code: 404**
 
 .. table:: **Table 6** Response body parameters
+
+   ========== ====== ==============
+   Parameter  Type   Description
+   ========== ====== ==============
+   error_code String Error code.
+   error_msg  String Error message.
+   ========== ====== ==============
+
+**Status code: 500**
+
+.. table:: **Table 7** Response body parameters
 
    ========== ====== ==============
    Parameter  Type   Description
@@ -110,6 +121,7 @@ Status Codes
 Status Code Description
 =========== ======================
 204         No Content
+400         Bad request.
 401         Unauthorized.
 403         Forbidden.
 404         Not found.
