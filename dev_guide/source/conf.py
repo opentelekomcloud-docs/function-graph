@@ -109,8 +109,7 @@ html_copy_source = False
 # -- Options for PDF output --------------------------------------------------
 latex_documents = [
     ('index',
-     'fg-dev-guide.tex',
-     u'FunctionGraph - Developer Guide',
+     'fg-dev-guide.tex',u'FunctionGraph - Developer Guide',
      u'OpenTelekomCloud', 'manual'),
 ]
 
