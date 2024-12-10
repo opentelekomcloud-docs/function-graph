@@ -110,7 +110,7 @@ html_copy_source = False
 latex_documents = [
     ('index',
      'fg-best-practice.tex',
-     u'FunctionGraph - Best Practice',
+    u'FunctionGraph - Best Practice',
      u'OpenTelekomCloud', 'manual'),
 ]
 

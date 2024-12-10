@@ -110,7 +110,7 @@ html_copy_source = False
 latex_documents = [
     ('index',
      'fg-api-ref.tex',
-     u'FunctionGraph - API Reference',
+    u'FunctionGraph - API Reference',
      u'OpenTelekomCloud', 'manual'),
 ]
 

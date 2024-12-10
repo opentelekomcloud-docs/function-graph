@@ -110,7 +110,7 @@ html_copy_source = False
 latex_documents = [
     ('index',
      'fg-umn.tex',
-     u'FunctionGraph - User Guide',
+    u'FunctionGraph - User Guide',
      u'OpenTelekomCloud', 'manual'),
 ]
 
