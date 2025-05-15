@@ -15,6 +15,10 @@ Before creating a trigger, ensure that you have prepared the following:
 -  You have created a function. For details, see :ref:`Creating a Function from Scratch <functiongraph_01_0153>`.
 -  You have created an OBS bucket, for example, **obs_cff**. For details, see `Creating a Bucket <https://docs.otc.t-systems.com/object-storage-service/umn/obs_console_operation_guide/getting_started/creating_a_bucket.html#obs-03-0306>`__.
 
+.. note::
+
+   Since OBS buckets are not associable to projects the function also needs to be placed in the same region as the bucket.
+
 Creating an OBS Trigger
 -----------------------
 
