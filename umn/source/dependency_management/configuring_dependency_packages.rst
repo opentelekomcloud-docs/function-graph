@@ -36,7 +36,7 @@ Creating a Dependency
       +===================================+============================================================+
       | Name                              | Dependency name.                                           |
       +-----------------------------------+------------------------------------------------------------+
-      | Code Entry Mode                   | Upload a ZIP file directly or upload a file from OBS.      |
+      | Code Entry Mode                   | You can upload a ZIP file or upload a file from OBS.       |
       |                                   |                                                            |
       |                                   | -  **Upload ZIP**: Click **Select File** to upload one.    |
       |                                   | -  **Upload from OBS**: Specify an OBS link URL.           |
@@ -55,7 +55,11 @@ Creating a Dependency
 
    -  To delete a version, click the delete icon in the same row.
 
-      |image1|
+
+      .. figure:: /_static/images/en-us_image_0000001709193044.png
+         :alt: **Figure 1** Deleting a dependency version
+
+         **Figure 1** Deleting a dependency version
 
 Configuring Dependencies for a Function
 ---------------------------------------
@@ -84,7 +88,7 @@ Configuring Dependencies for a Function
 Deleting a Dependency
 ---------------------
 
-To delete a dependency, just delete all of its versions.
+To delete a dependency, delete all of its versions.
 
 #. Return to the FunctionGraph console, and choose **Functions** > **Dependencies** in the navigation pane.
 
@@ -94,12 +98,10 @@ To delete a dependency, just delete all of its versions.
 
 
    .. figure:: /_static/images/en-us_image_0000001757072025.png
-      :alt: **Figure 1** Deleting a dependency version
+      :alt: **Figure 2** Deleting a dependency version
 
-      **Figure 1** Deleting a dependency version
+      **Figure 2** Deleting a dependency version
 
    .. note::
 
       Dependencies referenced by functions cannot be deleted.
-
-.. |image1| image:: /_static/images/en-us_image_0000001709193044.png

@@ -1,6 +1,6 @@
-:original_name: en-us_topic_0000001540362886.html
+:original_name: functiongraph_01_1000.html
 
-.. _en-us_topic_0000001540362886:
+.. _functiongraph_01_1000:
 
 Service Overview
 ================
@@ -9,11 +9,11 @@ Service Overview
 -  :ref:`Product Features <functiongraph_01_0200_0>`
 -  :ref:`Product Advantages <functiongraph_01_0180_0>`
 -  :ref:`Application Scenarios <functiongraph_01_0140_0>`
--  :ref:`Function Types <functiongraph_02_1000>`
+-  :ref:`Function Types <en-us_topic_0000001257203581>`
 -  :ref:`Notes and Constraints <functiongraph_01_0150>`
 -  :ref:`Permissions Management <functiongraph_01_0160_0>`
 -  :ref:`Concepts <functiongraph_02_1005>`
--  :ref:`Relationships Between FunctionGraph and Other Services <functiongraph_01_0130_0>`
+-  :ref:`Relationships Between FunctionGraph and Other Services <functiongraph_01_0130>`
 
 .. toctree::
    :maxdepth: 1

@@ -17,6 +17,11 @@ Scenario
 
 Tags help you identify and manage your function resources. For example, you can define a set of tags for function resources in your account to track the owner and usage of each function resource.
 
+Prerequisites
+-------------
+
+You have enabled Tag Management Service (TMS), or the pre-defined tags cannot be used. For details, see `Permission Management <https://docs.otc.t-systems.com/tag-management-service/umn/product_profile/permissions.html#tms-01-0009>`__.
+
 Adding a Tag
 ------------
 
@@ -24,7 +29,7 @@ Adding a Tag
 
 #. Click the function to be configured to go to the function details page.
 
-#. Choose **Configuration** > **Tag**, and click **Add Tag**.
+#. Choose **Configuration** > **Tags**, click **Edit Tag**, and click **Add Tag**.
 
 #. Add a tag key and value that meet the following rules:
 

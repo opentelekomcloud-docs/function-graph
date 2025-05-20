@@ -5,4 +5,4 @@
 What Is the Quota of FunctionGraph?
 ===================================
 
-For details about the resource quota of FunctionGraph, see section "Notes and Constraints".
+For details about the resource quota of FunctionGraph, see :ref:`Notes and Constraints <functiongraph_01_0150>`.

@@ -1,13 +1,13 @@
-:original_name: functiongraph_01_0130_0.html
+:original_name: functiongraph_01_0130.html
 
-.. _functiongraph_01_0130_0:
+.. _functiongraph_01_0130:
 
 Relationships Between FunctionGraph and Other Services
 ======================================================
 
-:ref:`Table 1 <functiongraph_01_0130_0__en-us_topic_0000001257180283_table3990123112020>` describes the cloud services that have been interconnected with FunctionGraph.
+:ref:`Table 1 <functiongraph_01_0130__table3990123112020>` describes the cloud services that have been interconnected with FunctionGraph.
 
-.. _functiongraph_01_0130_0__en-us_topic_0000001257180283_table3990123112020:
+.. _functiongraph_01_0130__table3990123112020:
 
 .. table:: **Table 1** Interconnected services
 

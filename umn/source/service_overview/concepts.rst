@@ -15,6 +15,13 @@ Event Source
 
 An event source is a public cloud service or custom application that publishes events.
 
+Runtime
+-------
+
+The runtime provides an execution environment for the corresponding programming language to pass function invocation events, context information, and responses.
+
+For supported runtimes, see .
+
 Synchronous Invocation
 ----------------------
 
@@ -70,7 +77,7 @@ Each function alias can be bound to a major version and an additional version fo
 Dependency Package
 ------------------
 
-FunctionGraph enables you to manage dependencies in a unified manner. You can upload dependencies from a local path, or through OBS if they are too large, and specify names for them.
+A dependency contains public libraries that support the running of function code. You can encapsulate the required public libraries into a dependency for easier management, sharing, and smaller deployment sizes.
 
 Bootstrap File
 --------------

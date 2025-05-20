@@ -7,6 +7,11 @@ Using an OBS Trigger
 
 For details about the OBS event source, see section "Supported Event Sources".
 
+Constraints
+-----------
+
+-  Buckets created in different regions are different. Ensure that the OBS bucket and function are in the same region.
+
 Prerequisites
 -------------
 

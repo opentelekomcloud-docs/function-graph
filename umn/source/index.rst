@@ -18,3 +18,4 @@ FunctionGraph - User Guide
    dependency_management/index
    reserved_instance_management
    faqs/index
+   change_history

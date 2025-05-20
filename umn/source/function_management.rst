@@ -25,6 +25,7 @@ You can export the functions that you created.
       -  The exported function resource package cannot exceed 50 MB.
       -  The name of the exported function resource package is in the format of *function name*\ +\ *MD5 value of function code*.zip.
       -  The exported function resource package does not include alias information.
+      -  If a function is disabled or enabled, all versions of the function will be disabled or enabled.
 
 Disabling a Function
 --------------------

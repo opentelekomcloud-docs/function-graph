@@ -76,10 +76,4 @@ View function logs in the specified log group and log stream.
 
          **Figure 1** Viewing function logs
 
-   -  The following figure shows two successful requests. The request at the bottom took 13.100 ms, including the cold start time. The request at the top took only 1.671 ms, because no cold start was involved.
-
-
-      .. figure:: /_static/images/en-us_image_0000001679199937.png
-         :alt: **Figure 2** Logs
-
-         **Figure 2** Logs
+   -  On the **Request List** tab, you can query the time consumed by each request ID, used memory, and version. You can check whether the request is cold started based on the **Cause** column. If **Common cold start successful** is displayed, the request is cold started. If **Execution successful** is displayed, the request is not cold started.
