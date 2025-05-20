@@ -37,13 +37,5 @@ Triggering a Function
 ---------------------
 
 #. On the **Code** tab page of the **context** function, click **Test** in the upper right corner.
-
 #. In the **Configure Test Event** dialog box, select **Blank Template** and click **Create**.
-
 #. Click **Test**. After the test is complete, view the test result.
-
-
-   .. figure:: /_static/images/en-us_image_0000001269221818.png
-      :alt: **Figure 1** Successful execution result
-
-      **Figure 1** Successful execution result

@@ -27,7 +27,7 @@ Initializing a Function
 
 #. Click the function to be configured to go to the function details page.
 
-#. Click the **Configuration** tab and choose **Advanced Settings**.
+#. Choose **Configuration** > **Lifecycle** and enable **Initialization**.
 
 
    .. figure:: /_static/images/en-us_image_0000001678920797.png
@@ -50,7 +50,8 @@ Initializing a Function
       |                                   |                                                                                                                                                                                                                                                                                   |
       |                                   | .. note::                                                                                                                                                                                                                                                                         |
       |                                   |                                                                                                                                                                                                                                                                                   |
-      |                                   |    This parameter is not required if function initialization is disabled.                                                                                                                                                                                                         |
+      |                                   |    -  This parameter is not required if function initialization is disabled.                                                                                                                                                                                                      |
+      |                                   |    -  Ensure that the function initializer and handler are in the same file.                                                                                                                                                                                                      |
       +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
    .. note::

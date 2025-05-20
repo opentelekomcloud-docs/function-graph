@@ -12,7 +12,7 @@ A function is customized code for processing events. You can create a function f
 
 FunctionGraph manages the compute resources required for function execution. After editing code for your function, configure compute resources on the FunctionGraph console.
 
-You can create a function from scratch or by using :ref:`a template <functiongraph_01_0401>` or :ref:`container image <functiongraph_01_1047>`.
+You can create a function from scratch or by using :ref:`a template <functiongraph_04_0102>` or :ref:`container image <functiongraph_04_0104>`.
 
 .. note::
 
@@ -76,8 +76,27 @@ Procedure
       |                                   | .. important::                                                                                                                                                                                            |
       |                                   |                                                                                                                                                                                                           |
       |                                   |    NOTICE:                                                                                                                                                                                                |
-      |                                   |    CloudIDE supports Node.js and Python only.                                                                                                                                                             |
+      |                                   |    CloudIDE supports Node.js, Python, and PHP only.                                                                                                                                                       |
       +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+#. .. _functiongraph_01_1441__en-us_topic_0000001251907924_li183661110102712:
+
+   **Advanced Settings**: **Collect Logs** is disabled by default. If it is enabled, function execution logs will be reported to Log Tank Service (LTS). You will be billed for log management on a pay-per-use basis.
+
+   .. table:: **Table 2** Parameters for configuring Collect Logs
+
+      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                                                    |
+      +===================================+================================================================================================================================+
+      | Log Configuration                 | You can select **Auto** or **Custom**.                                                                                         |
+      |                                   |                                                                                                                                |
+      |                                   | -  **Auto**: Use the default log group and log stream. Log groups prefixed with "functiongraph.log.group" are filtered out.    |
+      |                                   | -  **Custom**: Select a custom log group and log stream. Log streams that are in the same enterprise project as your function. |
+      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+      | Log Tag                           | You can use these tags to filter function logs in LTS. You can add 10 more tags.                                               |
+      |                                   |                                                                                                                                |
+      |                                   | Tag key/value: Enter a maximum of 64 characters. Only digits, letters, underscores (_), and hyphens (-) are allowed.           |
+      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 #. Click **Create Function**. On the displayed **Code** tab page, continue to configure the code.
 
@@ -89,16 +108,14 @@ Configuring Code
    As shown in the following example, to deploy code in Node.js 10.16, you can edit code inline, upload a local ZIP file, or upload a ZIP file from OBS.
 
 
-   .. figure:: /_static/images/en-us_image_0000001387236998.png
+   .. figure:: /_static/images/en-us_image_0000001630136520.png
       :alt: **Figure 2** Deploying code
 
       **Figure 2** Deploying code
 
+   .. note::
 
-   .. figure:: /_static/images/en-us_image_0000001630136520.png
-      :alt: **Figure 3** Deploying code
-
-      **Figure 3** Deploying code
+      If you deploy code by uploading a local ZIP file, ensure that the region selected for creating the function is the same as that selected for creating an OBS bucket.
 
 #. You can modify the code and click **Deploy** to deploy the code again.
 
@@ -111,26 +128,26 @@ Viewing Code Information
 
 
    .. figure:: /_static/images/en-us_image_0000001629978216.png
-      :alt: **Figure 4** Viewing code attributes
+      :alt: **Figure 3** Viewing code attributes
 
-      **Figure 4** Viewing code attributes
+      **Figure 3** Viewing code attributes
 
 #. View basic information.
 
-   :ref:`Configuring Basic Settings <functiongraph_01_1828>` shows the default memory and execution timeout in each runtime. You can click **Edit** to switch to the **Basic Settings** page and modify **Handler**, **Memory (MB)**, and **Execution Timeout (s)** as required. For details, see :ref:`Figure 5 <functiongraph_01_1441__en-us_topic_0000001251907924_fig11561614250>`.
+   :ref:`Configuring Basic Settings <functiongraph_01_1828>` shows the default memory and execution timeout in each runtime. You can click **Edit** to switch to the **Basic Settings** page and modify **Handler**, **Memory (MB)**, and **Execution Timeout (s)** as required. For details, see :ref:`Figure 4 <functiongraph_01_1441__en-us_topic_0000001251907924_fig11561614250>`.
 
    .. _functiongraph_01_1441__en-us_topic_0000001251907924_fig11561614250:
 
    .. figure:: /_static/images/en-us_image_0000001678858881.png
-      :alt: **Figure 5** Editing basic information
+      :alt: **Figure 4** Editing basic information
 
-      **Figure 5** Editing basic information
+      **Figure 4** Editing basic information
 
    .. important::
 
       Once a function is created, the runtime cannot be changed.
 
-   .. table:: **Table 2** Default basic information of each runtime
+   .. table:: **Table 3** Default basic information of each runtime
 
       +-----------------------------------+-----------------------------------------+
       | Runtime                           | Default Basic Information               |
@@ -150,6 +167,12 @@ Viewing Code Information
       | Custom                            | Memory (MB): 128                        |
       |                                   |                                         |
       |                                   | Handler: bootstrap                      |
+      |                                   |                                         |
+      |                                   | Execution Timeout (s): 3                |
+      +-----------------------------------+-----------------------------------------+
+      | PHP                               | Memory (MB): 128                        |
+      |                                   |                                         |
+      |                                   | Handler: index.handler                  |
       |                                   |                                         |
       |                                   | Execution Timeout (s): 3                |
       +-----------------------------------+-----------------------------------------+

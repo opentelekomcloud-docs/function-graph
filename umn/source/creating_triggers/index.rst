@@ -17,6 +17,7 @@ Creating Triggers
 -  :ref:`Using a DDS Trigger <functiongraph_01_0210>`
 -  :ref:`Using an Open-Source Kafka Trigger <functiongraph_01_1838>`
 -  :ref:`Cron Expressions for a Function Timer Trigger <functiongraph_01_0908>`
+-  :ref:`Using a RocketMQ Trigger <functiongraph_01_0394>`
 
 .. toctree::
    :maxdepth: 1
@@ -34,3 +35,4 @@ Creating Triggers
    using_a_dds_trigger
    using_an_open-source_kafka_trigger
    cron_expressions_for_a_function_timer_trigger
+   using_a_rocketmq_trigger

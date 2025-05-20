@@ -24,7 +24,7 @@ When a client triggers a function, FunctionGraph persists the request and sends 
       DMS for Kafka Asynchronous
       ============= ===============
 
--  APIG and APIG (dedicated) triggers can be configured for asynchronous invocation on their console. You can also use the API described in section "Executing a Function Asynchronously" to trigger a function asynchronously. In this scenario, the maximum execution duration of a function is 12 hours (configured in the whitelist).
+-  APIG and APIG (dedicated) triggers can be configured for asynchronous invocation on their console. You can also use the asynchronous execution API instead. In this scenario, the maximum execution duration of a function is 12 hours (configured in the whitelist).
 
    .. note::
 

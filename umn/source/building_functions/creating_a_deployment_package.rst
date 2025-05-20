@@ -31,6 +31,10 @@ To create a function, you must create a deployment package which includes your c
    +-------------------------------------------------------------------------------------------------+---------------------+----------------------+----------------------+-------------------------------+
    | :ref:`Go <functiongraph_01_0152__en-us_topic_0000001251588476_section1980313817362>`            | Not supported       | Supported            | Not supported        | Supported                     |
    +-------------------------------------------------------------------------------------------------+---------------------+----------------------+----------------------+-------------------------------+
+   | :ref:`C# <functiongraph_01_0152__en-us_topic_0000001251588476_section5575103419499>`            | Not supported       | Supported            | Not supported        | Supported                     |
+   +-------------------------------------------------------------------------------------------------+---------------------+----------------------+----------------------+-------------------------------+
+   | :ref:`PHP <functiongraph_01_0152__en-us_topic_0000001251588476_section1016816117271>`           | Supported           | Supported            | Not supported        | Supported                     |
+   +-------------------------------------------------------------------------------------------------+---------------------+----------------------+----------------------+-------------------------------+
    | :ref:`Custom runtime <functiongraph_01_0152__en-us_topic_0000001251588476_section166121748658>` | Supported           | Supported            | Not supported        | Supported                     |
    +-------------------------------------------------------------------------------------------------+---------------------+----------------------+----------------------+-------------------------------+
 
@@ -78,13 +82,13 @@ If your code uses other resources, such as a graphic library for image processin
 
    After creating a ZIP deployment package, upload it to the FunctionGraph console. If the package size exceeds 40 MB, upload the package from OBS.
 
-   For details about function resource restrictions, see section "Notes and Constraints".
+   For details about function resource restrictions, see :ref:`Notes and Constraints <functiongraph_01_0150>`.
 
 -  Uploading a deployment package using an OBS bucket
 
    After creating a ZIP deployment package, upload it to an OBS bucket in the same region as your FunctionGraph, and then paste the link URL of the OBS bucket into the function. The maximum size of the ZIP file that can be uploaded to OBS is 300 MB.
 
-   For details about function resource restrictions, see section "Notes and Constraints".
+   For details about function resource restrictions, see :ref:`Notes and Constraints <functiongraph_01_0150>`.
 
 .. _functiongraph_01_0152__en-us_topic_0000001251588476_section4865310182816:
 
@@ -109,13 +113,13 @@ If your code uses other resources, such as a graphic library for image processin
 
    After creating a ZIP deployment package, upload it to the FunctionGraph console. If the package size exceeds 40 MB, upload the package from OBS.
 
-   For details about function resource restrictions, see section "Notes and Constraints".
+   For details about function resource restrictions, see :ref:`Notes and Constraints <functiongraph_01_0150>`.
 
 -  Uploading a deployment package using an OBS bucket
 
    After creating a ZIP deployment package, upload it to an OBS bucket in the same region as your FunctionGraph, and then paste the link URL of the OBS bucket into the function. The maximum size of the ZIP file that can be uploaded to OBS is 300 MB.
 
-   For details about function resource restrictions, see section "Notes and Constraints".
+   For details about function resource restrictions, see :ref:`Notes and Constraints <functiongraph_01_0150>`.
 
 .. _functiongraph_01_0152__en-us_topic_0000001251588476_section14790124217354:
 
@@ -144,13 +148,13 @@ You can upload a Java deployment package in two ways.
 
    After creating a ZIP deployment package, upload it to the FunctionGraph console. If the package size exceeds 40 MB, upload the package from OBS.
 
-   For details about function resource restrictions, see section "Notes and Constraints".
+   For details about function resource restrictions, see :ref:`Notes and Constraints <functiongraph_01_0150>`.
 
 -  Uploading a deployment package using an OBS bucket
 
    After creating a ZIP deployment package, upload it to an OBS bucket in the same region as your FunctionGraph, and then paste the link URL of the OBS bucket into the function. The maximum size of the ZIP file that can be uploaded to OBS is 300 MB.
 
-   For details about function resource restrictions, see section "Notes and Constraints".
+   For details about function resource restrictions, see :ref:`Notes and Constraints <functiongraph_01_0150>`.
 
 .. _functiongraph_01_0152__en-us_topic_0000001251588476_section1980313817362:
 
@@ -170,13 +174,69 @@ You can only upload a Go deployment package in ZIP format. There are two ways to
 
    After creating a ZIP deployment package, upload it to the FunctionGraph console. If the package size exceeds 40 MB, upload the package from OBS.
 
-   For details about function resource restrictions, see section "Notes and Constraints".
+   For details about function resource restrictions, see :ref:`Notes and Constraints <functiongraph_01_0150>`.
 
 -  Uploading a deployment package using an OBS bucket
 
    After creating a ZIP deployment package, upload it to an OBS bucket in the same region as your FunctionGraph, and then paste the link URL of the OBS bucket into the function. The maximum size of the ZIP file that can be uploaded to OBS is 300 MB.
 
-   For details about function resource restrictions, see section "Notes and Constraints".
+   For details about function resource restrictions, see :ref:`Notes and Constraints <functiongraph_01_0150>`.
+
+.. _functiongraph_01_0152__en-us_topic_0000001251588476_section5575103419499:
+
+C#
+--
+
+**Uploading a Deployment Package**
+
+You can only upload a C# deployment package in ZIP format. There are two ways to upload it.
+
+.. important::
+
+   -  When creating a ZIP file, place the handler file under the **root** directory to ensure that your code can run normally after being decompressed.
+   -  The size of the decompressed source code cannot exceed 1.5 GB. If the code is too large, contact the customer service.
+
+-  Directly uploading a local deployment package
+
+   After creating a ZIP deployment package, upload it to the FunctionGraph console. If the package size exceeds 40 MB, upload the package from OBS.
+
+   For details about function resource restrictions, see :ref:`Notes and Constraints <functiongraph_01_0150>`.
+
+-  Uploading a deployment package using an OBS bucket
+
+   After creating a ZIP deployment package, upload it to an OBS bucket in the same region as your FunctionGraph, and then paste the link URL of the OBS bucket into the function. The maximum size of the ZIP file that can be uploaded to OBS is 300 MB.
+
+   For details about function resource restrictions, see :ref:`Notes and Constraints <functiongraph_01_0150>`.
+
+.. _functiongraph_01_0152__en-us_topic_0000001251588476_section1016816117271:
+
+PHP
+---
+
+**Editing Code Inline**
+
+FunctionGraph provides an SDK for editing code in PHP. If your custom code uses only the SDK library, you can edit code using the inline editor on the FunctionGraph console. After you edit code inline and upload it to FunctionGraph, the console compresses your code and the related configurations into a deployment package that FunctionGraph can run.
+
+**Uploading a Deployment Package**
+
+If your code uses other resources, such as a graphic library for image processing, first create a deployment package, and then upload the package to the FunctionGraph console. You can upload a PHP deployment package in two ways.
+
+.. important::
+
+   -  When creating a ZIP file, place the handler file under the **root** directory to ensure that your code can run normally after being decompressed.
+   -  The size of the decompressed source code cannot exceed 1.5 GB. If the code is too large, contact the customer service.
+
+-  Directly uploading a local deployment package
+
+   After creating a ZIP deployment package, upload it to the FunctionGraph console. If the package size exceeds 40 MB, upload the package from OBS.
+
+   For details about function resource restrictions, see :ref:`Notes and Constraints <functiongraph_01_0150>`.
+
+-  Uploading a deployment package using an OBS bucket
+
+   After creating a ZIP deployment package, upload it to an OBS bucket in the same region as your FunctionGraph, and then paste the link URL of the OBS bucket into the function. The maximum size of the ZIP file that can be uploaded to OBS is 300 MB.
+
+   For details about function resource restrictions, see :ref:`Notes and Constraints <functiongraph_01_0150>`.
 
 .. _functiongraph_01_0152__en-us_topic_0000001251588476_section166121748658:
 
@@ -200,10 +260,10 @@ If your code uses other resources, such as a graphic library for image processin
 
    After creating a ZIP deployment package, upload it to the FunctionGraph console. If the package size exceeds 40 MB, upload the package from OBS.
 
-   For details about function resource restrictions, see section "Notes and Constraints".
+   For details about function resource restrictions, see :ref:`Notes and Constraints <functiongraph_01_0150>`.
 
 -  Uploading a deployment package using an OBS bucket
 
    After creating a ZIP deployment package, upload it to an OBS bucket in the same region as your FunctionGraph, and then paste the link URL of the OBS bucket into the function. The maximum size of the ZIP file that can be uploaded to OBS is 300 MB.
 
-   For details about function resource restrictions, see section "Notes and Constraints".
+   For details about function resource restrictions, see :ref:`Notes and Constraints <functiongraph_01_0150>`.

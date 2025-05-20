@@ -15,6 +15,6 @@ The message "CrashLoopBackOff: The application inside the container keeps crashi
 
       **Figure 1** Viewing the execution result
 
-#. Verify the container image by referring to section "Deploying a Function Using a Container Image".
+#. Verify the container image by referring to :ref:`Deploying a Function Using a Container Image <functiongraph_04_0103>`.
 
 #. Check whether the image uses the Linux x86 architecture. Currently, only Linux x86 images are supported.

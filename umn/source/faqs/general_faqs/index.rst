@@ -8,7 +8,6 @@ General FAQs
 -  :ref:`What Is FunctionGraph? <functiongraph_03_0110>`
 -  :ref:`Do I Need to Apply for Any Compute, Storage, or Network Services When Using FunctionGraph? <functiongraph_03_0120>`
 -  :ref:`Do I Need to Deploy My Code After Programming? <functiongraph_03_0160>`
--  :ref:`What Runtimes Does FunctionGraph Support? <functiongraph_03_0260>`
 -  :ref:`How Much Disk Space Is Allocated to Each FunctionGraph Function? <functiongraph_03_0170>`
 -  :ref:`Does FunctionGraph Support Function Versioning? <functiongraph_03_0240>`
 -  :ref:`How Does a Function Read or Write Files? <functiongraph_03_0330>`
@@ -16,7 +15,7 @@ General FAQs
 -  :ref:`Which Permissions Are Required for an IAM User to Use FunctionGraph? <functiongraph_03_0342>`
 -  :ref:`How Can I Create an ODBC Drive-based Python Dependency Package for Database Query? <functiongraph_03_0830>`
 -  :ref:`What Is the Quota of FunctionGraph? <functiongraph_03_0352>`
--  :ref:`How Does a Container Image-based Function Resolve a Private DNS Domain Name? <functiongraph_03_0872>`
+-  :ref:`How Does FunctionGraph Implement Domain Name Resolution? <functiongraph_03_0839>`
 -  :ref:`How Do I Use a Domain Name to Access an API Registered with API Gateway (Dedicated)? <functiongraph_03_0840>`
 -  :ref:`What Are the Common Application Scenarios of FunctionGraph? <functiongraph_03_0817>`
 -  :ref:`Why Can't the API Gateway Domain Name Bound to a Service Be Resolved During Function Invocation? <functiongraph_03_0826>`
@@ -46,7 +45,6 @@ General FAQs
    what_is_functiongraph
    do_i_need_to_apply_for_any_compute_storage_or_network_services_when_using_functiongraph
    do_i_need_to_deploy_my_code_after_programming
-   what_runtimes_does_functiongraph_support
    how_much_disk_space_is_allocated_to_each_functiongraph_function
    does_functiongraph_support_function_versioning
    how_does_a_function_read_or_write_files
@@ -54,7 +52,7 @@ General FAQs
    which_permissions_are_required_for_an_iam_user_to_use_functiongraph
    how_can_i_create_an_odbc_drive-based_python_dependency_package_for_database_query
    what_is_the_quota_of_functiongraph
-   how_does_a_container_image_based_function_resolve_a_private_dns_domain_name
+   how_does_functiongraph_implement_domain_name_resolution
    how_do_i_use_a_domain_name_to_access_an_api_registered_with_api_gateway_dedicated
    what_are_the_common_application_scenarios_of_functiongraph
    why_cant_the_api_gateway_domain_name_bound_to_a_service_be_resolved_during_function_invocation

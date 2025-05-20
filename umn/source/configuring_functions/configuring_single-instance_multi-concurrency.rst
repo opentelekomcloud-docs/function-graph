@@ -60,7 +60,7 @@ Configuring Single-Instance Multi-Concurrency
    Set parameters by referring to :ref:`Table 2 <functiongraph_01_0303__en-us_topic_0000001252067196_table1167224813179>` and click **Save**.
 
 
-   .. figure:: /_static/images/en-us_image_0000001387407430.png
+   .. figure:: /_static/images/en-us_image_0000002225526736.png
       :alt: **Figure 1** Concurrency configuration
 
       **Figure 1** Concurrency configuration
@@ -72,15 +72,22 @@ Configuring Single-Instance Multi-Concurrency
       +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Parameter                         | Description                                                                                                                                                                                                    |
       +===================================+================================================================================================================================================================================================================+
-      | Max. Requests per Instance        | Number of concurrent requests supported by a single instance. Value range: 1-1000.                                                                                                                             |
-      +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Max. Instances per Function       | Maximum number of instances in which a function can run. Default: **400**. Maximum: **1000**. **-1**: The function can run in any number of instances. **0**: The function is disabled.                        |
+      | Max. Instances per Function       | **Explanation**:                                                                                                                                                                                               |
       |                                   |                                                                                                                                                                                                                |
-      |                                   | .. note::                                                                                                                                                                                                      |
+      |                                   | Maximum number of on-demand instances that can be enabled for a function.                                                                                                                                      |
       |                                   |                                                                                                                                                                                                                |
-      |                                   |    Requests that exceed the processing capability of instances will be discarded.                                                                                                                              |
+      |                                   | **Restrictions:**                                                                                                                                                                                              |
       |                                   |                                                                                                                                                                                                                |
-      |                                   |    Errors caused by excessive requests will not be displayed in function logs. You can obtain error details by referring to :ref:`Configuring Asynchronous Execution Notification <functiongraph_01_0390_03>`. |
+      |                                   | -  Requests that exceed the processing capability of instances will be discarded.                                                                                                                              |
+      |                                   | -  Errors caused by excessive requests will not be displayed in function logs. You can obtain error details by referring to :ref:`Configuring Asynchronous Execution Notification <functiongraph_01_0390_03>`. |
+      |                                   |                                                                                                                                                                                                                |
+      |                                   | **Value range**:                                                                                                                                                                                               |
+      |                                   |                                                                                                                                                                                                                |
+      |                                   | -1 or an integer ranging from 1 to 1000. The value **-1** indicates that the number of instances is not limited.                                                                                               |
+      |                                   |                                                                                                                                                                                                                |
+      |                                   | **Default value**:                                                                                                                                                                                             |
+      |                                   |                                                                                                                                                                                                                |
+      |                                   | 400                                                                                                                                                                                                            |
       +-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Configuration Constraints

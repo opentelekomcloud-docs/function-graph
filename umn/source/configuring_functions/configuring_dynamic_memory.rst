@@ -35,7 +35,7 @@ Procedure
 
 #. Call the synchronous or asynchronous function execution API, add **X-Cff-Instance-Memory** to the request header, and set the value to **128**, **256**, **512**, **768**, **1024**, **1280**, **1536**, **1792**, **2048**, **2560**, **3072**, **3584**, **4096**, **8192**, or **10240**.
 
-   The following describes how to call an API using Postman. Add **X-Cff-Instance-Memory** to **Headers** and set the value to **512**. If the API is called successfully, error code 200 will be returned.
+   The following describes how to call an API using Postman. Add **X-Cff-Instance-Memory** to **Headers** and set the value to **512**. If the API is called successfully, status code 200 will be returned.
 
 
    .. figure:: /_static/images/en-us_image_0000001252067312.png
@@ -47,7 +47,7 @@ Procedure
 
       -  If **Dynamic Memory** is not enabled, the memory size set when the function is created will be used by default.
 
-      -  If **Dynamic Memory** is enabled but the memory value has not been set, the memory size set when the function is created will be used by default. If the API is called successfully, error code 200 will be returned.
+      -  If **Dynamic Memory** is enabled but the memory value has not been set, the memory size set when the function is created will be used by default. If the API is called successfully, status code 200 will be returned.
 
       -  If **Dynamic Memory** is enabled but the memory value is not **128**, **256**, **512**, **768**, **1024**, **1280**, **1536**, **1792**, **2048**, **2560**, **3072**, **3584**, **4096**, **8192**, or **10240**, error code FSS.0406 will be returned when the API is called. You only need to reset the memory value.
 

@@ -9,6 +9,8 @@ Supported Programming Languages
 -  :ref:`Python <functiongraph_01_1823>`
 -  :ref:`Java <functiongraph_01_1824>`
 -  :ref:`Go <functiongraph_01_1825>`
+-  :ref:`C# <functiongraph_01_1826>`
+-  :ref:`PHP <functiongraph_01_1827>`
 -  :ref:`Custom Runtime <functiongraph_01_0406>`
 
 .. toctree::
@@ -19,4 +21,6 @@ Supported Programming Languages
    python
    java
    go
+   csharp
+   php
    custom_runtime

@@ -37,7 +37,7 @@ Creating a DIS Trigger
 
    -  **Trigger Type**: Select **Data Ingestion Service (DIS)**.
    -  **Stream Name**: Select a DIS stream, for example, **dis-function**.
-   -  **Max. Fetch Bytes**: Maximum volume of data that can be fetched in each request. Only the records smaller than this value will be fetched. The value ranges from 1 KB to 4 MB.
+   -  **Max. Fetch Bytes**: Maximum volume of data that can be fetched in each request. Only the records smaller than this value will be fetched. The value ranges from 0 KB to 4 MB.
    -  **Starting Position**: Specify a position in the specified stream from which to start reading data.
 
       -  **TRIM_HORIZON**: Data is read from the earliest valid records that are stored in the partition.

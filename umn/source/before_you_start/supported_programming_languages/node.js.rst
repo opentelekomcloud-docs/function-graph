@@ -17,4 +17,5 @@ Node.js 12.13 Y
 Node.js 14.18 Y
 Node.js 16.17 Y
 Node.js 18.15 Y
+Node.js 20.15 Y
 ============= =========

@@ -10,33 +10,33 @@ Function Management
 
 FunctionGraph provides console-based function management.
 
--  The Node.js, Java, Python, Go, and custom runtimes are supported. :ref:`Table 1 <functiongraph_01_0200_0__en-us_topic_0000001257380265_table10794101711416>` provides the details.
+-  The Node.js, Java, Python, Go, PHP, and custom runtimes are supported. :ref:`Table 1 <functiongraph_01_0200_0__table10794101711416>` provides the details.
 
    .. note::
 
       You are advised to use the latest runtime version.
 
-   .. _functiongraph_01_0200_0__en-us_topic_0000001257380265_table10794101711416:
+   .. _functiongraph_01_0200_0__table10794101711416:
 
    .. table:: **Table 1** Runtimes
 
-      ======= ======================================
+      ======= ====================================================
       Runtime Supported Version
-      ======= ======================================
-      Node.js 6.10, 8.10, 10.16, 12.13, 14.18, 16.17
-      Python  2.7, 3.6, 3.9
-      Java    8.0 and 11
+      ======= ====================================================
+      Node.js 6.10, 8.10, 10.16, 12.13, 14.18, 16.17, 18.15, 20.15
+      Python  2.7, 3.6, 3.9, 3.10, 3.12
+      Java    8.0, 11, 17, 21
       Go      1.x
-      C#      .NET Core 2.1 and .NET Core 3.1
-      PHP     7.3
+      C#      .NET Core 2.1, .NET Core 3.1, .NET Core 6.0
+      PHP     7.3, 8.3
       Custom  ``-``
-      ======= ======================================
+      ======= ====================================================
 
 -  Multiple code entry modes
 
-   FunctionGraph allows you to edit code inline, upload a ZIP file from Object Storage Service (OBS), or directly upload a ZIP or JAR file. :ref:`Table 2 <functiongraph_01_0200_0__en-us_topic_0000001257380265_table35034283164337>` lists the code entry modes supported for each runtime.
+   FunctionGraph allows you to edit code inline, upload a ZIP file from Object Storage Service (OBS), or directly upload a ZIP or JAR file. :ref:`Table 2 <functiongraph_01_0200_0__table35034283164337>` lists the code entry modes supported for each runtime.
 
-   .. _functiongraph_01_0200_0__en-us_topic_0000001257380265_table35034283164337:
+   .. _functiongraph_01_0200_0__table35034283164337:
 
    .. table:: **Table 2** Code entry modes
 
@@ -61,36 +61,38 @@ FunctionGraph provides console-based function management.
 Trigger
 -------
 
-:ref:`Table 3 <functiongraph_01_0200_0__en-us_topic_0000001257380265_table1316993416219>` lists the invocation modes for different trigger types.
+:ref:`Table 3 <functiongraph_01_0200_0__table1316993416219>` lists the invocation modes for different trigger types.
 
-.. _functiongraph_01_0200_0__en-us_topic_0000001257380265_table1316993416219:
+.. _functiongraph_01_0200_0__table1316993416219:
 
 .. table:: **Table 3** Function invocation modes
 
-   ======================================= ========================
-   Trigger                                 Function Invocation Mode
-   ======================================= ========================
-   SMN trigger                             Asynchronous invocation
-   APIG trigger                            Synchronous invocation
-   OBS trigger                             Asynchronous invocation
-   Data Ingestion Service (DIS) trigger    Asynchronous invocation
-   Timer trigger                           Asynchronous invocation
-   Log Tank Service (LTS) trigger          Asynchronous invocation
-   Cloud Trace Service (CTS) trigger       Asynchronous invocation
-   Document Database Service (DDS) trigger Asynchronous invocation
-   Kafka trigger                           Asynchronous invocation
-   ======================================= ========================
+   ============================================== ========================
+   Trigger                                        Function Invocation Mode
+   ============================================== ========================
+   SMN trigger                                    Asynchronous invocation
+   APIG trigger                                   Synchronous invocation
+   OBS trigger                                    Asynchronous invocation
+   Data Ingestion Service (DIS) trigger           Asynchronous invocation
+   Timer trigger                                  Asynchronous invocation
+   Log Tank Service (LTS) trigger                 Asynchronous invocation
+   Cloud Trace Service (CTS) trigger              Asynchronous invocation
+   Document Database Service (DDS) trigger        Asynchronous invocation
+   Kafka trigger                                  Asynchronous invocation
+   Distributed Message Service (DMS) for Kafka    Synchronous invocation
+   Distributed Message Service (DMS) for RocketMQ Synchronous invocation
+   ============================================== ========================
 
 Logs and Metrics
 ----------------
 
 FunctionGraph graphically displays function monitoring metrics and collects function running logs, enabling you to view function statuses, and locate problems by querying logs.
 
-To query logs, see :ref:`Managing Function Logs <functiongraph_01_1834>`.
+For details about how to query logs, see :ref:`Managing Function Logs <functiongraph_01_1834>`.
 
-For details about monitoring metric, see :ref:`Function Monitoring <functiongraph_01_0212>`.
+For details about a single monitoring metric, see section "Function Monitoring" in the *FunctionGraph User Guide*.
 
-For details about tenant-level function monitoring metrics, see :ref:`Introduction to Dashboard <functiongraph_01_0110__en-us_topic_0000001251907944_section123696302544>`.
+For details about tenant-level monitoring information, see :ref:`Introduction to Dashboard <functiongraph_01_0110__en-us_topic_0000001251907944_section123696302544>`.
 
 Function Initialization
 -----------------------

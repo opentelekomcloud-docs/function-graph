@@ -11,7 +11,8 @@ If you use an open-source Kafka trigger for a function, FunctionGraph periodical
 
 .. note::
 
-   For details about the differences between DMS for Kafka and open-source Kafka, see `Comparing DMS for Kafka and Open-Source Kafka <https://docs.otc.t-systems.com/distributed-message-service/umn/service_overview/comparing_dms_for_kafka_and_open-source_kafka.html#kafka-pd-200720001>`__.
+   -  For details about the differences between DMS for Kafka and open-source Kafka, see `Comparing DMS for Kafka and Open-Source Kafka <https://docs.otc.t-systems.com/distributed-message-service/umn/service_overview/comparing_dms_for_kafka_and_open-source_kafka.html#kafka-pd-200720001>`__.
+   -  In cases of Kafka data processing failure, the Kafka trigger will discard records that are larger than 6 MB.
 
 Prerequisites
 -------------

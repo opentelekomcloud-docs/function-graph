@@ -86,10 +86,14 @@ The following lists preset parameters. Do not configure environment variables wi
    |                             |                                                                        | Default value: **/home/snuser/log**                                         |
    +-----------------------------+------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
+.. _functiongraph_01_0154__en-us_topic_0000001298786821_section970817574358:
+
 Example
 -------
 
 You can use environment variables to configure which directory to install files in, where to store outputs, and how to store connection and logging settings. These settings are decoupled from the application logic, so you do not need to update your function code when you change the settings.
+
+**Python**
 
 In the following code snippet, **obs_output_bucket** is the bucket used for storing processed images.
 
@@ -116,6 +120,31 @@ In the following code snippet, **obs_output_bucket** is the bucket used for stor
        PostObject (obs_address, outputBucket, outFile, ak, sk)
 
        return 'OK'
+
+**Node.js**
+
+.. code-block::
+
+   exports.handler = async (event, context) => {
+       let bucket = context.getUserData('obs_output_bucket');
+       console.log(bucket);
+       const output =
+       {
+           'statusCode': 200,
+           'headers':
+           {
+               'Content-Type': 'application/json'
+           },
+           'isBase64Encoded': false,
+           'body': JSON.stringify(event),
+       }
+       return output;
+   }
+
+.. note::
+
+   -  Non-HTTP functions use **context.getUserData ('xxx')** to obtain environment variables.
+   -  HTTP functions use system methods to obtain environment variables. For example, Python functions use **os.Environ['xx']**, and Node.js functions use **process.env.xx**.
 
 Using environment variable **obs_output_bucket**, you can flexibly set the OBS bucket used for storing output images.
 

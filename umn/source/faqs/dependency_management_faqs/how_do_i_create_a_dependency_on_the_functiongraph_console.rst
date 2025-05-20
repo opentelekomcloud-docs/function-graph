@@ -30,11 +30,5 @@ How Do I Create a Dependency on the FunctionGraph Console?
 #. Click the dependency name, and view all versions and related information on the displayed page. Each dependency can have multiple versions.
 
    -  To create a dependency version, click **Create Version** in the upper right corner of the page.
-
    -  To view the address of a version, click the version.
-
    -  To delete a version, click the delete icon in the same row.
-
-      |image1|
-
-.. |image1| image:: /_static/images/en-us_image_0000001466738342.png

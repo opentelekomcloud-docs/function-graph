@@ -9,7 +9,7 @@ This section describes how to use Identity and Access Management (IAM) to implem
 
 -  Create IAM users for employees based on the organizational structure of your enterprise. Each IAM user has their own security credentials for accessing FunctionGraph resources.
 -  Grant only the permissions required for users to perform a task.
--  Entrust other accounts or cloud services to perform professional and efficient O&M on your FunctionGraph resources.
+-  Entrust an account or a cloud service to perform efficient O&M on your FunctionGraph resources.
 
 If your account does not need individual IAM users, then you may skip over this chapter.
 

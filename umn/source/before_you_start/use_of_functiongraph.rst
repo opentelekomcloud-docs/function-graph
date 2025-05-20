@@ -7,12 +7,23 @@ Use of FunctionGraph
 
 FunctionGraph allows you to run your code without provisioning or managing servers, while ensuring high availability and scalability. All you need to do is upload your code and set execution conditions, and FunctionGraph will take care of the rest.
 
+To quickly create a function using FunctionGraph, do as follows:
+
+|image1|
+
+#. Set permissions: Ensure that you have the **FunctionGraph FullAccess** permissions.
+#. Create a function: Create a function from scratch or using the sample code or a container image.
+#. Configure the function: Configure the code source or modify other parameters.
+#. Test the function: Create a test event to debug the function.
+#. View the execution result: On the function details page, view the execution result based on the configured test event.
+#. View metrics: On the **Monitoring** tab page of the function details page, view function metrics.
+
 Process
 -------
 
 :ref:`Figure 1 <functiongraph_01_0110__en-us_topic_0000001251907944_fig24661772619>` shows the process of using functions.
 
-#. Write code, package and upload it to FunctionGraph, and add event sources such as Simple Message Notification (SMN), Object Storage Service (OBS), and API Gateway (APIG) event sources to build applications.
+#. Write code, package and upload it to FunctionGraph, and add event sources such as Simple Message Notification (SMN) and API Gateway (APIG) event sources to build applications.
 
 #. Functions are triggered by RESTful API calls or event sources to achieve expected service purposes. During this process, FunctionGraph automatically schedules resources.
 
@@ -29,7 +40,7 @@ The following shows the details:
 
 #. Write code.
 
-   Write code in Node.js, Python, Java, or Go.
+   Write code in Node.js, Python, Java, C#, PHP, or Go.
 
 #. Upload code.
 
@@ -89,3 +100,5 @@ Log in to the FunctionGraph console and choose **Dashboard** in the navigation p
       +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
       | Throttles             | Count                 | Number of times that FunctionGraph throttles your functions due to the resource limit.                                                                                                                      |
       +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. |image1| image:: /_static/images/en-us_image_0000002024507229.png
