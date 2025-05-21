@@ -1,12 +1,12 @@
-:original_name: functiongraph_02_1000.html
+:original_name: en-us_topic_0000001257203581.html
 
-.. _functiongraph_02_1000:
+.. _en-us_topic_0000001257203581:
 
 Function Types
 ==============
 
--  :ref:`Event Functions <functiongraph_02_1001>`
--  :ref:`HTTP Functions <functiongraph_02_1002>`
+-  :ref:`Event Functions <en-us_topic_0000001212603706>`
+-  :ref:`HTTP Functions <en-us_topic_0000001257403573>`
 
 .. toctree::
    :maxdepth: 1

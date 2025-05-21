@@ -47,19 +47,21 @@ Procedure
       | Parameter                                  | Description                                                                                                                |
       +============================================+============================================================================================================================+
       | Asynchronous Execution Notification Policy | -  **Max. Retries**: maximum number of retries when asynchronous invocation fails. Value range: 0-3. Default value: **1**. |
-      |                                            | -  **Max. Validity Period (s)**: maximum lifetime of a message in seconds. Value range: 1-86,400.                          |
+      |                                            | -  **Max. Validity Period (s)**: maximum lifetime of a message in seconds. Value range: 1-86400.                           |
       +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
       | Success Notification                       | **Target Service**: to which a notification will be sent if a function is executed successfully.                           |
       |                                            |                                                                                                                            |
       |                                            | a. FunctionGraph                                                                                                           |
       |                                            | b. OBS                                                                                                                     |
-      |                                            | c. SMN                                                                                                                     |
+      |                                            | c. DIS                                                                                                                     |
+      |                                            | d. SMN                                                                                                                     |
       +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
       | Failure Notification                       | **Target Service**: to which a notification will be sent if a function fails to be executed.                               |
       |                                            |                                                                                                                            |
       |                                            | a. FunctionGraph                                                                                                           |
       |                                            | b. OBS                                                                                                                     |
-      |                                            | c. SMN                                                                                                                     |
+      |                                            | c. DIS                                                                                                                     |
+      |                                            | d. SMN                                                                                                                     |
       +--------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 #. Click **OK**.

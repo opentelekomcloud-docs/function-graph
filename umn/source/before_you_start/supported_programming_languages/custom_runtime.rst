@@ -20,6 +20,15 @@ Your runtime runs in the FunctionGraph execution environment. It can be a shell 
 
    If you edit code in Go, zip the compiled file, and ensure that the name of the dynamic library file is consistent with the plug-in name of the handler. For example, if the name of the dynamic library file is **testplugin.so**, set the handler name to **testplugin.Handler**.
 
+Compiling Description
+---------------------
+
+If you compile files on Windows and execute them on Linux, you need to configure the following parameters:
+
+.. code-block::
+
+   CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go
+
 Runtime File bootstrap
 ----------------------
 

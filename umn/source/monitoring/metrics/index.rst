@@ -6,7 +6,7 @@ Metrics
 =======
 
 -  :ref:`Function Monitoring <functiongraph_01_0212>`
--  :ref:`Function Metrics <functiongraph_01_0213>`
+-  :ref:`FunctionGraph Metrics <functiongraph_01_0213>`
 -  :ref:`Creating an Alarm Rule <functiongraph_01_0304>`
 
 .. toctree::
@@ -14,5 +14,5 @@ Metrics
    :hidden: 
 
    function_monitoring
-   function_metrics
+   functiongraph_metrics
    creating_an_alarm_rule

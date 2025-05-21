@@ -2,23 +2,29 @@
 
 .. _functiongraph_04_0104:
 
-Developing an Event Function
-============================
+Creating an Event Function Using a Container Image and Executing the Function
+=============================================================================
 
-Introduction
-------------
+This section uses the creation of an event function using a container image as an example to describe how to create and test a container image function. You need to implement an HTTP server in the image and listen to port **8000** to receive requests. By default, the request path **/init** is the function initialization entry. Implement it as required. The request path **/invoke** is the function execution entry where trigger events are processed. For details about request parameters, see section "Supported Event Sources".
 
-When developing an event function using a custom image, implement an HTTP server in the image and listen on port 8000 for requests. By default, the request path **/init** is the function initialization entry. Implement it as required. The request path **/invoke** is the function execution entry where trigger events are processed. For details about request parameters, see section "Supported Event Sources".
+Constraints
+-----------
 
-Step 1: Prepare the Environment
--------------------------------
+#. You can use any base image.
+#. In the cloud environment, UID 1003 and GID 1003 are used to start the container by default. The two IDs can be modified by choosing **Configuration** > **Basic Settings** > **Container Image Override** on the function details page. They cannot be **root** or a reserved ID.
+#. If the basic image of the Alpine version is used, run the **addgroup** and **adduser** commands.
 
-To perform the operations described in this section, ensure that you have the **FunctionGraph FullAccess** permissions, that is, all permissions for FunctionGraph. For more information, see section "Permissions Management".
+Prerequisites
+-------------
 
-Step 2: Create an Image
+#. Grant the FunctionGraph operation permissions to the user.
+
+   To perform the operations described in this section, ensure that you have the **FunctionGraph FullAccess** permissions, that is, all permissions for FunctionGraph. For more information, see :ref:`Permissions Management <functiongraph_01_0160_0>`.
+
+Step 1: Create an Image
 -----------------------
 
-Take the Linux x86 64-bit OS as an example.
+Take the Linux x86 64-bit OS as an example. (No system configuration is required.)
 
 #. Create a folder.
 
@@ -104,21 +110,16 @@ Take the Linux x86 64-bit OS as an example.
       WORKDIR ${HOME}
 
       EXPOSE 8000
-      ENTRYPOINT ["node", "main.js"]
+      ENTRYPOINT ["node", "/home/custom_container/main.js"]
 
    -  **FROM**: Specify base image **node:12.10.0**. The base image is mandatory and its value can be changed.
    -  **ENV**: Set environment variables **HOME** (**/home/custom_container**), **GROUP_NAME** and **USER_NAME** (**custom_container**), **USER_ID** and **GROUP_ID** (**1003**). These environment variables are mandatory and their values can be changed.
    -  **RUN**: Use the format **RUN** *<Command>*. For example, **RUN mkdir -m 550 ${HOME}**, which means to create the **home** directory for user *${USER_NAME}* during container building.
    -  **USER**: Switch to user *${USER_NAME}*.
-   -  **WORKDIR**: Switch the working directory to the **home** directory of user *${USER_NAME}*.
+   -  **WORKDIR**: Switch the working directory to the **${HOME}** directory of user *${USER_NAME}*.
    -  **COPY**: Copy **main.js** and **package.json** to the **home** directory of user *${USER_NAME}* in the container.
    -  **EXPOSE**: Expose port 8000 of the container. Do not change this parameter.
    -  **ENTRYPOINT**: Run the **node /home/tester/main.js** command to start the container.
-
-   .. note::
-
-      a. You can use any base image.
-      b. In the cloud environment, UID 1003 and GID 1003 are used to start the container by default. The two IDs can be modified by choosing **Configuration** > **Basic Settings** > **Container Image Override** on the function details page. They cannot be **root** or a reserved ID.
 
 5. Build an image.
 
@@ -128,7 +129,7 @@ Take the Linux x86 64-bit OS as an example.
 
       docker build -t custom_container_event_example:latest .
 
-Step 3: Perform Local Verification
+Step 2: Perform Local Verification
 ----------------------------------
 
 #. Start the Docker container.
@@ -175,7 +176,7 @@ Step 3: Perform Local Verification
 
    |image2|
 
-Step 4: Upload the Image
+Step 3: Upload the Image
 ------------------------
 
 #. Log in to the SWR console. In the navigation pane, choose **My Images**.
@@ -188,7 +189,7 @@ Step 4: Upload the Image
 
 #. View the image on the **My Images** page.
 
-Step 5: Create a Function
+Step 4: Create a Function
 -------------------------
 
 #. In the left navigation pane of the management console, choose **Compute** > **FunctionGraph**. On the FunctionGraph console, choose **Functions** > **Function List** from the navigation pane.
@@ -196,14 +197,49 @@ Step 5: Create a Function
 #. Set the basic information.
 
    -  **Function Type**: Select **Event Function**.
+
+   -  **Region**: The default value is used. You can select other regions.
+
+      **Regions are geographic areas isolated from each other. Resources are region-specific and cannot be used across regions through internal network connections. For low network latency and quick resource access, select the nearest region.**
+
    -  **Function Name**: Enter **custom_container_event**.
+
+   -  **Enterprise Project**: The default value is **default**. You can select the created enterprise project.
+
+      Enterprise projects let you manage cloud resources and users by project.
+
+   -  **Agency**: Select an agency with the **SWR Admin** permission. If no agency is available, create one by referring to :ref:`Creating an Agency <functiongraph_01_0920>`
+
    -  **Container Image**: Enter the image uploaded to SWR.
-   -  **Agency**: Select an agency with the **SWR Admin** permission. If no agency is available, create one by referring to section "Creating an Agency".
+
+#. (Optional) Override the container image.
+
+   -  **CMD**: container startup command. Example: **/bin/sh**. If no command is specified, the entrypoint or CMD in the image configuration will be used.
+   -  **Args**: container startup parameter. Example: **-args,value1**. If no argument is specified, CMD in the image configuration will be used.
+   -  **User ID**: Enter the user ID.
+   -  **Group ID**: Enter the user group ID.
+
+#. **Advanced Settings**: **Collect Logs** is disabled by default. If it is enabled, function execution logs will be reported to Log Tank Service (LTS). You will be billed for log management on a pay-per-use basis.
+
+   .. table:: **Table 1** Parameters for configuring Collect Logs
+
+      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                                                    |
+      +===================================+================================================================================================================================+
+      | Log Configuration                 | You can select **Auto** or **Custom**.                                                                                         |
+      |                                   |                                                                                                                                |
+      |                                   | -  **Auto**: Use the default log group and log stream. Log groups prefixed with "functiongraph.log.group" are filtered out.    |
+      |                                   | -  **Custom**: Select a custom log group and log stream. Log streams that are in the same enterprise project as your function. |
+      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+      | Log Tag                           | You can use these tags to filter function logs in LTS. You can add 10 more tags.                                               |
+      |                                   |                                                                                                                                |
+      |                                   | Tag key/value: Enter a maximum of 64 characters. Only digits, letters, underscores (_), and hyphens (-) are allowed.           |
+      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 #. After the configuration is complete, click **Create Function**.
-#. On the function details page, choose **Configuration** > **Advanced Settings**, and enable **Initialization**. The **init** API will be called to initialize the function.
+#. On the function details page, choose **Configuration** > **Lifecycle**, and enable **Initialization**. The **init** API will be called to initialize the function.
 
-Step 6: Test the Function
+Step 5: Test the Function
 -------------------------
 
 #. On the function details page, click **Test**. In the displayed dialog box, create a test event.
@@ -216,7 +252,7 @@ Step 6: Test the Function
           "message": "HelloWorld"
       }
 
-Step 7: View the Execution Result
+Step 6: View the Execution Result
 ---------------------------------
 
 Click **Test** and view the execution result on the right.
@@ -233,21 +269,7 @@ Click **Test** and view the execution result on the right.
 
    .. note::
 
-      A maximum of 2 KB logs can be displayed. For more log information, see section "Querying Function Logs".
-
-Step 8: View Monitoring Metrics
--------------------------------
-
-On the function details page, click the **Monitoring** tab.
-
--  On the **Monitoring** tab page, choose **Metrics**, and select a time range (such as 5 minutes, 15 minutes, or 1 hour) to query the function.
--  The following metrics are displayed: invocations, errors, duration (including the maximum, average, and minimum durations), and throttles.
-
-Step 9: Delete the Function
----------------------------
-
-#. On the function details page, choose **Operation** > **Delete Function** in the upper right corner.
-#. In the confirmation dialog box, enter **DELETE** and click **OK** to release resources in a timely manner.
+      A maximum of 2 KB logs can be displayed. For more log information, see :ref:`Querying Function Logs <functiongraph_01_0170>`.
 
 .. |image1| image:: /_static/images/en-us_image_0000001472598601.png
 .. |image2| image:: /_static/images/en-us_image_0000001472598777.png

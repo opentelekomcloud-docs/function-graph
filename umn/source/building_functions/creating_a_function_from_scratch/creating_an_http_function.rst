@@ -17,6 +17,7 @@ HTTP functions are designed to optimize web services. You can send HTTP requests
    -  HTTP functions support multiple programming languages.
    -  Functions must return a valid HTTP response.
    -  This section uses Node.js as an example. To use another runtime, simply change the runtime path. The code package path does not need to be changed. For the paths of other runtimes, see :ref:`Table 1 <functiongraph_01_1442__en-us_topic_0000001298667441_table20671103902218>`.
+   -  When a function initiates an HTTP request, the request IP address is dynamic for private network access and fixed for public network access. For more information, contact technical support.
 
 Prerequisites
 -------------
@@ -71,22 +72,55 @@ Prerequisites
 
    .. table:: **Table 1** Paths for different runtimes
 
-      ========== =======================================================
-      Runtime    Path
-      ========== =======================================================
-      Java 8     /opt/function/runtime/java8/rtsp/jre/bin/java
-      Java 11    /opt/function/runtime/java11/rtsp/jre/bin/java
-      Node.js 6  /opt/function/runtime/nodejs6.10/rtsp/nodejs/bin/node
-      Node.js 8  /opt/function/runtime/nodejs8.10/rtsp/nodejs/bin/node
-      Node.js 10 /opt/function/runtime/nodejs10.16/rtsp/nodejs/bin/node
-      Node.js 12 /opt/function/runtime/nodejs12.13/rtsp/nodejs/bin/node
-      Node.js 14 /opt/function/runtime/nodejs14.18/rtsp/nodejs/bin/node
-      Node.js 16 /opt/function/runtime/nodejs16.17/rtsp/nodejs/bin/node
-      Node.js 18 /opt/function/runtime/nodejs18.15/rtsp/nodejs/bin/node
-      Python 2.7 /opt/function/runtime/python2.7/rtsp/python/bin/python
-      Python 3.6 /opt/function/runtime/python3.6/rtsp/python/bin/python3
-      Python 3.9 /opt/function/runtime/python3.9/rtsp/python/bin/python3
-      ========== =======================================================
+      +--------------------+----------------------------------------------------------+
+      | Runtime            | Path                                                     |
+      +====================+==========================================================+
+      | Java 8             | /opt/function/runtime/java8/rtsp/jre/bin/java            |
+      +--------------------+----------------------------------------------------------+
+      | Java 11            | /opt/function/runtime/java11/rtsp/jre/bin/java           |
+      +--------------------+----------------------------------------------------------+
+      | Java17             | /opt/function/runtime/java17/rtsp/jre/bin/java           |
+      +--------------------+----------------------------------------------------------+
+      | Java21             | /opt/function/runtime/java21/rtsp/jre/bin/java           |
+      +--------------------+----------------------------------------------------------+
+      | Node.js 6          | /opt/function/runtime/nodejs6.10/rtsp/nodejs/bin/node    |
+      +--------------------+----------------------------------------------------------+
+      | Node.js 8          | /opt/function/runtime/nodejs8.10/rtsp/nodejs/bin/node    |
+      +--------------------+----------------------------------------------------------+
+      | Node.js 10         | /opt/function/runtime/nodejs10.16/rtsp/nodejs/bin/node   |
+      +--------------------+----------------------------------------------------------+
+      | Node.js 12         | /opt/function/runtime/nodejs12.13/rtsp/nodejs/bin/node   |
+      +--------------------+----------------------------------------------------------+
+      | Node.js 14         | /opt/function/runtime/nodejs14.18/rtsp/nodejs/bin/node   |
+      +--------------------+----------------------------------------------------------+
+      | Node.js 16         | /opt/function/runtime/nodejs16.17/rtsp/nodejs/bin/node   |
+      +--------------------+----------------------------------------------------------+
+      | Node.js 18         | /opt/function/runtime/nodejs18.15/rtsp/nodejs/bin/node   |
+      +--------------------+----------------------------------------------------------+
+      | Node.js20          | /opt/function/runtime/nodejs20.15/rtsp/nodejs/bin/node   |
+      +--------------------+----------------------------------------------------------+
+      | Python 2.7         | /opt/function/runtime/python2.7/rtsp/python/bin/python   |
+      +--------------------+----------------------------------------------------------+
+      | Python 3.6         | /opt/function/runtime/python3.6/rtsp/python/bin/python3  |
+      +--------------------+----------------------------------------------------------+
+      | Python 3.9         | /opt/function/runtime/python3.9/rtsp/python/bin/python3  |
+      +--------------------+----------------------------------------------------------+
+      | Python3.10         | /opt/function/runtime/python3.10/rtsp/python/bin/python3 |
+      +--------------------+----------------------------------------------------------+
+      | Python3.12         | /opt/function/runtime/python3.12/rtsp/python/bin/python3 |
+      +--------------------+----------------------------------------------------------+
+      | PHP 7.3            | /opt/function/runtime/php7.3/rtsp/php/bin/php            |
+      +--------------------+----------------------------------------------------------+
+      | PHP8.3             | /opt/function/runtime/php8.3/rtsp/php/bin/php            |
+      +--------------------+----------------------------------------------------------+
+      | C# (.NET Core 2.1) | /opt/function/runtime/dotnet2.1/rtsp/dotnet/dotnet       |
+      +--------------------+----------------------------------------------------------+
+      | C# (.NET Core 3.1) | /opt/function/runtime/dotnet3.1/rtsp/dotnet/dotnet       |
+      +--------------------+----------------------------------------------------------+
+      | C# (.NET Core 6.0) | /opt/function/runtime/dotnet6.0/rtsp/dotnet/dotnet       |
+      +--------------------+----------------------------------------------------------+
+      | C# (.NET Core 8.0) | /opt/function/runtime/dotnet8.0/rtsp/dotnet/dotnet       |
+      +--------------------+----------------------------------------------------------+
 
 Procedure
 ---------
@@ -106,6 +140,10 @@ Procedure
 
          **Figure 2** Uploading a ZIP file
 
+      .. note::
+
+         If you deploy code by uploading a local ZIP file, ensure that the region selected for creating the function is the same as that selected for creating an OBS bucket.
+
 #. Create a trigger.
 
    .. note::
@@ -114,7 +152,7 @@ Procedure
 
    a. On the function details page, choose **Configuration** > **Triggers** and click **Create Trigger**.
 
-   b. Set the trigger information. This step uses an APIG (dedicated) trigger as an example. For more information, see :ref:`Using an APIG (Dedicated) Trigger <functiongraph_01_0204>`.
+   b. Set the trigger information. This step uses an API Gateway (Dedicated) trigger as an example. For more information, see :ref:`Using an APIG (Dedicated) Trigger <functiongraph_01_0204>`.
 
 
       .. figure:: /_static/images/en-us_image_0000001678749193.png

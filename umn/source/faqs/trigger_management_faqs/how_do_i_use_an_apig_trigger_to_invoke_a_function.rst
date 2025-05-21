@@ -5,4 +5,4 @@
 How Do I Use an APIG Trigger to Invoke a Function?
 ==================================================
 
-For details, see section "Using an APIG Trigger".
+For details, see :ref:`Using an APIG (Dedicated) Trigger <functiongraph_01_0204>`.

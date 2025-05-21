@@ -12,7 +12,7 @@ Package your container images complying with the Open Container Initiative (OCI)
 
 For details about how to develop and deploy an HTTP function using a container image, see :ref:`Developing an HTTP Function <functiongraph_04_0103>`.
 
-For details about how to develop and deploy an event function using a container image, see :ref:`Developing an Event Function <functiongraph_04_0104>`.
+For details about how to develop and deploy an event function using a container image, see :ref:`Creating an Event Function Using a Container Image and Executing the Function <functiongraph_04_0104>`.
 
 The following features are supported:
 
@@ -31,6 +31,10 @@ The following features are supported:
 -  **Reserved instances**
 
    For details, see the description about reserved instances.
+
+-  **Deploying a new image**
+
+   You can redeploy a new image in a function.
 
 .. note::
 
@@ -60,51 +64,51 @@ Procedure
 
    .. table:: **Table 1** Parameter description
 
-      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Parameter                         | Description                                                                                                                                                                                                                 |
-      +===================================+=============================================================================================================================================================================================================================+
-      | \*Function Type                   | Select a function type.                                                                                                                                                                                                     |
-      |                                   |                                                                                                                                                                                                                             |
-      |                                   | **HTTP function**: triggered once HTTP requests are sent to specific URLs.                                                                                                                                                  |
-      |                                   |                                                                                                                                                                                                                             |
-      |                                   | .. note::                                                                                                                                                                                                                   |
-      |                                   |                                                                                                                                                                                                                             |
-      |                                   |    -  The custom container image must contain an HTTP server with listening port 8000.                                                                                                                                      |
-      |                                   |                                                                                                                                                                                                                             |
-      |                                   |    -  HTTP functions support APIG and APIC triggers only.                                                                                                                                                                   |
-      |                                   |                                                                                                                                                                                                                             |
-      |                                   |    -  When calling a function using APIG, **isBase64Encoded** is valued **true** by default, indicating that the request body transferred to FunctionGraph is encoded using Base64 and must be decoded for processing.      |
-      |                                   |                                                                                                                                                                                                                             |
-      |                                   |    -  The function must return characters strings by using the following structure.                                                                                                                                         |
-      |                                   |                                                                                                                                                                                                                             |
-      |                                   |       .. code-block::                                                                                                                                                                                                       |
-      |                                   |                                                                                                                                                                                                                             |
-      |                                   |          {                                                                                                                                                                                                                  |
-      |                                   |              "isBase64Encoded": true|false,                                                                                                                                                                                 |
-      |                                   |              "statusCode": httpStatusCode,                                                                                                                                                                                  |
-      |                                   |              "headers": {"headerName":"headerValue",...},                                                                                                                                                                   |
-      |                                   |              "body": "..."                                                                                                                                                                                                  |
-      |                                   |          }                                                                                                                                                                                                                  |
-      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | \*Region                          | Select a region where you will deploy your code.                                                                                                                                                                            |
-      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | \*Function Name                   | Name of the function, which must meet the following requirements:                                                                                                                                                           |
-      |                                   |                                                                                                                                                                                                                             |
-      |                                   | -  Consists of 1 to 60 characters, and can contain letters, digits, hyphens (-), and underscores (_).                                                                                                                       |
-      |                                   | -  Starts with a letter and ends with a letter or digit.                                                                                                                                                                    |
-      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | \*Enterprise Project              | Select a created enterprise project and add the function to it. By default, **default** is selected.                                                                                                                        |
-      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Container Image                   | Enter an image URL, that is, the location of the container image. You can click **View Image** to view private and shared images.                                                                                           |
-      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Container Image Override          | -  **CMD**: container startup command. Example: **/bin/sh**. If no command is specified, the entrypoint or CMD in the image configuration will be used. Enter one or more commands separated with commas (,).               |
-      |                                   | -  **Args**: container startup parameter. Example: **-args,value1**. If no argument is specified, CMD in the image configuration will be used. Enter one or more arguments separated with commas (,).                       |
-      |                                   | -  **Working Dir**: working directory of the container. The folder path cannot be created or modified and must start with a slash (/). If no directory is specified, the directory in the image configuration will be used. |
-      |                                   | -  **User ID**: user ID for running the image. If no user ID is specified, the default value **1003** will be used.                                                                                                         |
-      |                                   | -  **Group ID**: user group ID. If no user group ID is specified, the default value **1003** will be used.                                                                                                                  |
-      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Agency                            | Select an agency with the **SWR Admin** permission. To create an agency, see :ref:`Creating an Agency <functiongraph_01_0920__en-us_topic_0000001298507433_section17872123319473>`.                                         |
-      +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                                                                                                                                            |
+      +===================================+========================================================================================================================================================================================================================+
+      | \*Function Type                   | Select a function type.                                                                                                                                                                                                |
+      |                                   |                                                                                                                                                                                                                        |
+      |                                   | **HTTP function**: triggered once HTTP requests are sent to specific URLs.                                                                                                                                             |
+      |                                   |                                                                                                                                                                                                                        |
+      |                                   | .. note::                                                                                                                                                                                                              |
+      |                                   |                                                                                                                                                                                                                        |
+      |                                   |    -  The custom container image must contain an HTTP server with listening port 8000.                                                                                                                                 |
+      |                                   |                                                                                                                                                                                                                        |
+      |                                   |    -  HTTP functions support APIG and APIC triggers only.                                                                                                                                                              |
+      |                                   |                                                                                                                                                                                                                        |
+      |                                   |    -  When calling a function using APIG, **isBase64Encoded** is valued **true** by default, indicating that the request body transferred to FunctionGraph is encoded using Base64 and must be decoded for processing. |
+      |                                   |                                                                                                                                                                                                                        |
+      |                                   |    -  The function must return characters strings by using the following structure.                                                                                                                                    |
+      |                                   |                                                                                                                                                                                                                        |
+      |                                   |       .. code-block::                                                                                                                                                                                                  |
+      |                                   |                                                                                                                                                                                                                        |
+      |                                   |          {                                                                                                                                                                                                             |
+      |                                   |              "isBase64Encoded": true|false,                                                                                                                                                                            |
+      |                                   |              "statusCode": httpStatusCode,                                                                                                                                                                             |
+      |                                   |              "headers": {"headerName":"headerValue",...},                                                                                                                                                              |
+      |                                   |              "body": "..."                                                                                                                                                                                             |
+      |                                   |          }                                                                                                                                                                                                             |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | \*Region                          | Select a region where you will deploy your code.                                                                                                                                                                       |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | \*Function Name                   | Name of the function, which must meet the following requirements:                                                                                                                                                      |
+      |                                   |                                                                                                                                                                                                                        |
+      |                                   | -  Consists of 1 to 60 characters, and can contain letters, digits, hyphens (-), and underscores (_).                                                                                                                  |
+      |                                   | -  Starts with a letter and ends with a letter or digit.                                                                                                                                                               |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | \*Enterprise Project              | Select a created enterprise project and add the function to it. By default, **default** is selected.                                                                                                                   |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Container Image                   | Enter an image URL, that is, the location of the container image. You can click **View Image** to view private and shared images.                                                                                      |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Container Image Override          | -  **CMD**: container startup command. Example: **/bin/sh**. If no command is specified, the entrypoint or CMD in the image configuration will be used. Enter one or more commands separated with commas (,).          |
+      |                                   | -  **Args**: container startup parameter. Example: **-args,value1**. If no argument is specified, CMD in the image configuration will be used. Enter one or more arguments separated with commas (,).                  |
+      |                                   | -  **Working Dir**: working directory of the container. The folder path can only be **/** and cannot be created or modified. The path will be **/** by default if not specified.                                       |
+      |                                   | -  **User ID**: user ID for running the image. If no user ID is specified, the default value **1003** will be used.                                                                                                    |
+      |                                   | -  **Group ID**: user group ID. If no user group ID is specified, the default value **1003** will be used.                                                                                                             |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+      | Agency                            | Select an agency with the **SWR Admin** permission. To create an agency, see :ref:`Creating an Agency <functiongraph_01_0920__en-us_topic_0000001298507433_section17872123319473>`.                                    |
+      +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
    .. note::
 
@@ -116,6 +120,31 @@ Procedure
       -  FunctionGraph uses LTS to collect all logs that the container outputs to the console. These logs can be redirected to and printed on the console through standard output or an open-source log framework. The logs should include the system time, component name, code line, and key data, to facilitate fault locating.
       -  When an out of memory (OOM) error occurs, view the memory usage in the function execution result.
       -  Functions must return a valid HTTP response.
+
+#. **Advanced Settings**: **Collect Logs** is disabled by default. If it is enabled, function execution logs will be reported to Log Tank Service (LTS). You will be billed for log management on a pay-per-use basis.
+
+   .. table:: **Table 2** Parameters for configuring Collect Logs
+
+      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+      | Parameter                         | Description                                                                                                                    |
+      +===================================+================================================================================================================================+
+      | Log Configuration                 | You can select **Auto** or **Custom**.                                                                                         |
+      |                                   |                                                                                                                                |
+      |                                   | -  **Auto**: Use the default log group and log stream. Log groups prefixed with "functiongraph.log.group" are filtered out.    |
+      |                                   | -  **Custom**: Select a custom log group and log stream. Log streams that are in the same enterprise project as your function. |
+      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+      | Log Tag                           | You can use these tags to filter function logs in LTS. You can add 10 more tags.                                               |
+      |                                   |                                                                                                                                |
+      |                                   | Tag key/value: Enter a maximum of 64 characters. Only digits, letters, underscores (_), and hyphens (-) are allowed.           |
+      +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+
+#. (Optional) Deploy a new image.
+
+   On the **Code** tab, click **Deploy Image** on the right, enter the URL of the new image in the text box, and click **OK**. To obtain the URL, perform the following operations:
+
+   a. Log in to the SWR console. In the navigation pane, choose **My Images**.
+   b. Click the **Private Images** or **Images From Others** tab. In the image list, click the image name to go to the details page.
+   c. Click the **Tags** tab, copy the download command in the image tag list, and delete **docker pull** from the command to obtain the image URL.
 
 Sample Code
 -----------

@@ -6,7 +6,7 @@ Dependency Management FAQs
 ==========================
 
 -  :ref:`What Is a Dependency? <functiongraph_03_0890>`
--  :ref:`When Do I Need a Dependency? <functiongraph_03_0885>`
+-  :ref:`When Do I Need a Dependency? <functiongraph_03_0878>`
 -  :ref:`What Are the Precautions for Using a Dependency? <functiongraph_03_0847>`
 -  :ref:`What Dependencies Does FunctionGraph Support? <functiongraph_03_0886>`
 -  :ref:`Does FunctionGraph Support Class Libraries? <functiongraph_03_0180>`

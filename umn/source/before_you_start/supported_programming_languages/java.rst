@@ -12,4 +12,6 @@ Runtime Supported
 ======= =========
 Java 8  Y
 Java 11 Y
+Java 17 Y
+Java 21 Y
 ======= =========
