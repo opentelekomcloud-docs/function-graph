@@ -438,7 +438,7 @@ OK
 
    [ {
      "trigger_id" : "1b3b264db3b849118d007884b9bc8a60",
-     "trigger_type_code" : "APIG",
+     "trigger_type_code" : "DEDICATEDGATEWAY",
      "trigger_status" : "ACTIVE",
      "event_data" : {
        "api_id" : "4a59f6a7263c4d1dab3f69c34f98d949",

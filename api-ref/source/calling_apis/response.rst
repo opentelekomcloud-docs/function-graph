@@ -19,11 +19,11 @@ Response Header
 
 Similar to a request, a response also has a header, for example, **Content-Type**.
 
-:ref:`Figure 1 <functiongraph_06_0220__fig1999718469177>` shows the response header fields for the API used to `obtain a user token <https://docs.otc.t-systems.com/identity-access-management/api-ref/apis/token_management/obtaining_a_user_token.html>`__. The **x-subject-token** header field is the desired user token. This token can then be used to authenticate the calling of other APIs.
+:ref:`Figure 1 <functiongraph_06_0220__fig38301181818>` shows the response header fields for the API used to `obtain a user token <https://docs.otc.t-systems.com/identity-access-management/api-ref/apis/token_management/obtaining_a_user_token.html>`__. The **x-subject-token** header field is the desired user token. This token can then be used to authenticate the calling of other APIs.
 
-.. _functiongraph_06_0220__fig1999718469177:
+.. _functiongraph_06_0220__fig38301181818:
 
-.. figure:: /_static/images/en-us_image_0000001433216038.gif
+.. figure:: /_static/images/en-us_image_0000002246483728.png
    :alt: **Figure 1** Header fields of the response to the request for obtaining a user token
 
    **Figure 1** Header fields of the response to the request for obtaining a user token

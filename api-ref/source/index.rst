@@ -11,3 +11,4 @@ FunctionGraph - API Reference
    examples/index
    apis/index
    appendix/index
+   change_history

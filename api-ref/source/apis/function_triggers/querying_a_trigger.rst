@@ -29,7 +29,6 @@ GET /v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{trigger_id
    |                   |                 |                 | Enumeration values:                                                                 |
    |                   |                 |                 |                                                                                     |
    |                   |                 |                 | -  **TIMER**                                                                        |
-   |                   |                 |                 | -  **APIG**                                                                         |
    |                   |                 |                 | -  **CTS**                                                                          |
    |                   |                 |                 | -  **DDS**                                                                          |
    |                   |                 |                 | -  **DMS**                                                                          |

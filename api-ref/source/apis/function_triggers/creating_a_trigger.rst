@@ -713,34 +713,6 @@ Example Requests
         }
       }
 
--  Create a shared APIG trigger named API_test_function, with None authentication (temporary domain name) and 5000s timeout.
-
-   .. code-block:: text
-
-      POST https://{Endpoint}/v2/{project_id}/fgs/triggers/{function_urn}
-
-      {
-        "trigger_type_code" : "APIG",
-        "trigger_status" : "ACTIVE",
-        "event_data" : {
-          "func_info" : {
-            "timeout" : 5000
-          },
-          "name" : "API_test_function",
-          "env_id" : "DEFAULT_ENVIRONMENT_RELEASE_ID",
-          "env_name" : "RELEASE",
-          "protocol" : "HTTPS",
-          "auth" : "NONE",
-          "group_id" : "318b09eb214a41488c667ecd51667e3x",
-          "sl_domain" : "318b09eb214a41488c667ecd51667e3x.apig.{region}.example.com",
-          "match_mode" : "SWA",
-          "req_method" : "ANY",
-          "backend_type" : "FUNCTION",
-          "type" : 1,
-          "path" : "/test_gxz_v1_billing"
-        }
-      }
-
 -  Create a dedicated APIG trigger named API_test_function, with None authentication (temporary domain name) and 5000s timeout.
 
    .. code-block:: text
