@@ -29,7 +29,6 @@ DELETE /v2/{project_id}/fgs/triggers/{function_urn}/{trigger_type_code}/{trigger
    |                   |                 |                 | Enumeration values:                                                                 |
    |                   |                 |                 |                                                                                     |
    |                   |                 |                 | -  **TIMER**                                                                        |
-   |                   |                 |                 | -  **APIG**                                                                         |
    |                   |                 |                 | -  **CTS**                                                                          |
    |                   |                 |                 | -  **DDS**                                                                          |
    |                   |                 |                 | -  **DMS**                                                                          |

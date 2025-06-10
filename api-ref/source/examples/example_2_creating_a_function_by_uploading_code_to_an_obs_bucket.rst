@@ -2,7 +2,7 @@
 
 .. _functiongraph_06_0204:
 
-Example 3: Creating a Function by Uploading Code to an OBS Bucket
+Example 2: Creating a Function by Uploading Code to an OBS Bucket
 =================================================================
 
 Scenario

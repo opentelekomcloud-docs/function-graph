@@ -42,102 +42,30 @@ Request Parameters
 
 .. table:: **Table 3** Request body parameters
 
-   +----------------+-----------+------------------------------------------------------------------------------+----------------------------------+
-   | Parameter      | Mandatory | Type                                                                         | Description                      |
-   +================+===========+==============================================================================+==================================+
-   | count          | Yes       | Integer                                                                      | Number of reserved instances.    |
-   +----------------+-----------+------------------------------------------------------------------------------+----------------------------------+
-   | idle_mode      | No        | Boolean                                                                      | Whether to enable the idle mode. |
-   +----------------+-----------+------------------------------------------------------------------------------+----------------------------------+
-   | tactics_config | No        | :ref:`TacticsConfig <functiongraph_06_0112_1__request_tacticsconfig>` object |                                  |
-   +----------------+-----------+------------------------------------------------------------------------------+----------------------------------+
-
-.. _functiongraph_06_0112_1__request_tacticsconfig:
-
-.. table:: **Table 4** TacticsConfig
-
-   +--------------+-----------+----------------------------------------------------------------------------------+-------------------------------+
-   | Parameter    | Mandatory | Type                                                                             | Description                   |
-   +==============+===========+==================================================================================+===============================+
-   | cron_configs | No        | Array of :ref:`CronConfig <functiongraph_06_0112_1__request_cronconfig>` objects | Scheduled configuration list. |
-   +--------------+-----------+----------------------------------------------------------------------------------+-------------------------------+
-
-.. _functiongraph_06_0112_1__request_cronconfig:
-
-.. table:: **Table 5** CronConfig
-
-   ============ ========= ======= =====================================
-   Parameter    Mandatory Type    Description
-   ============ ========= ======= =====================================
-   name         No        String  Scheduled configuration name.
-   cron         No        String  Cron expression.
-   count        No        Integer Number of started reserved instances.
-   start_time   No        Long    Start time (epoch format).
-   expired_time No        Long    Expiry time (epoch format).
-   ============ ========= ======= =====================================
+   ========= ========= ======= ================================
+   Parameter Mandatory Type    Description
+   ========= ========= ======= ================================
+   count     Yes       Integer Number of reserved instances.
+   idle_mode No        Boolean Whether to enable the idle mode.
+   ========= ========= ======= ================================
 
 Response Parameters
 -------------------
 
 **Status code: 200**
 
-.. table:: **Table 6** Response body parameters
+.. table:: **Table 4** Response body parameters
 
-   +----------------+-------------------------------------------------------------------------------+-------------------------------+
-   | Parameter      | Type                                                                          | Description                   |
-   +================+===============================================================================+===============================+
-   | count          | Integer                                                                       | Number of reserved instances. |
-   +----------------+-------------------------------------------------------------------------------+-------------------------------+
-   | idle_mode      | Boolean                                                                       | Whether to enable idle mode.  |
-   +----------------+-------------------------------------------------------------------------------+-------------------------------+
-   | tactics_config | :ref:`TacticsConfig <functiongraph_06_0112_1__response_tacticsconfig>` object |                               |
-   +----------------+-------------------------------------------------------------------------------+-------------------------------+
-
-.. _functiongraph_06_0112_1__response_tacticsconfig:
-
-.. table:: **Table 7** TacticsConfig
-
-   +--------------+-----------------------------------------------------------------------------------+-------------------------------+
-   | Parameter    | Type                                                                              | Description                   |
-   +==============+===================================================================================+===============================+
-   | cron_configs | Array of :ref:`CronConfig <functiongraph_06_0112_1__response_cronconfig>` objects | Scheduled configuration list. |
-   +--------------+-----------------------------------------------------------------------------------+-------------------------------+
-
-.. _functiongraph_06_0112_1__response_cronconfig:
-
-.. table:: **Table 8** CronConfig
-
-   ============ ======= =====================================
-   Parameter    Type    Description
-   ============ ======= =====================================
-   name         String  Scheduled configuration name.
-   cron         String  Cron expression.
-   count        Integer Number of started reserved instances.
-   start_time   Long    Start time (epoch format).
-   expired_time Long    Expiry time (epoch format).
-   ============ ======= =====================================
-
-.. table:: **Table 9** MetricConfig
-
-   +-----------------------+-----------------------+--------------------------------------------------------------------------------+
-   | Parameter             | Type                  | Description                                                                    |
-   +=======================+=======================+================================================================================+
-   | name                  | String                | Flow control configuration name.                                               |
-   +-----------------------+-----------------------+--------------------------------------------------------------------------------+
-   | type                  | String                | Flow control type. Currently, only reserved instance utilization is supported. |
-   |                       |                       |                                                                                |
-   |                       |                       | Enumeration values:                                                            |
-   |                       |                       |                                                                                |
-   |                       |                       | -  **Concurrency**                                                             |
-   +-----------------------+-----------------------+--------------------------------------------------------------------------------+
-   | threshold             | Integer               | Flow control threshold.                                                        |
-   +-----------------------+-----------------------+--------------------------------------------------------------------------------+
-   | min                   | Integer               | Minimum value.                                                                 |
-   +-----------------------+-----------------------+--------------------------------------------------------------------------------+
+   ========= ======= =============================
+   Parameter Type    Description
+   ========= ======= =============================
+   count     Integer Number of reserved instances.
+   idle_mode Boolean Whether to enable idle mode.
+   ========= ======= =============================
 
 **Status code: 400**
 
-.. table:: **Table 10** Response body parameters
+.. table:: **Table 5** Response body parameters
 
    ========== ====== ==============
    Parameter  Type   Description
@@ -148,7 +76,7 @@ Response Parameters
 
 **Status code: 401**
 
-.. table:: **Table 11** Response body parameters
+.. table:: **Table 6** Response body parameters
 
    ========== ====== ==============
    Parameter  Type   Description
@@ -159,7 +87,7 @@ Response Parameters
 
 **Status code: 403**
 
-.. table:: **Table 12** Response body parameters
+.. table:: **Table 7** Response body parameters
 
    ========== ====== ==============
    Parameter  Type   Description
@@ -170,7 +98,7 @@ Response Parameters
 
 **Status code: 404**
 
-.. table:: **Table 13** Response body parameters
+.. table:: **Table 8** Response body parameters
 
    ========== ====== ==============
    Parameter  Type   Description
@@ -181,7 +109,7 @@ Response Parameters
 
 **Status code: 500**
 
-.. table:: **Table 14** Response body parameters
+.. table:: **Table 9** Response body parameters
 
    ========== ====== ==============
    Parameter  Type   Description
