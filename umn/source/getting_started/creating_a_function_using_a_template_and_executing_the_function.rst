@@ -12,7 +12,7 @@ Prerequisites
 
 #. Grant the FunctionGraph operation permissions to the user.
 
-   To perform the operations described in this section, ensure that you have the **FunctionGraph FullAccess** permissions, that is, all permissions for FunctionGraph. For more information, see :ref:`Permissions Management <functiongraph_01_0160_0>`.
+   To perform the operations described in this section, ensure that you have the **FunctionGraph FullAccess** permissions, that is, all permissions for FunctionGraph. For more information, see section **"Permissions Management"**.
 
 Step 1: Create a Function
 -------------------------
@@ -30,7 +30,7 @@ Step 1: Create a Function
 
       **Figure 1** Selecting a template
 
-4. Set **Function Name** to **context**, select any agency from the **Agency** drop-down list, retain default values for other parameters, and click **Create Function**.
+4. On the displayed page, set function parameters and click **Create Function**.
 
    -  **Templates**: name of the selected template. To change the template, click **Reselect** on the right.
 
@@ -48,32 +48,7 @@ Step 1: Create a Function
 
       Specify an agency if you want to delegate FunctionGraph to access other cloud services, such as LTS and VPC.
 
-   -  **Runtime**: Select a runtime to compile the function. Default: **Python 2.7**. You can select another runtime.
-
-   -  **Advanced Settings**: **Collect Logs** is disabled by default. If it is enabled, function execution logs will be reported to Log Tank Service (LTS). You will be billed for log management on a pay-per-use basis.
-
-      .. table:: **Table 1** Parameters for configuring Collect Logs
-
-         +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-         | Parameter                         | Description                                                                                                                    |
-         +===================================+================================================================================================================================+
-         | Log Configuration                 | You can select **Auto** or **Custom**.                                                                                         |
-         |                                   |                                                                                                                                |
-         |                                   | -  **Auto**: Use the default log group and log stream. Log groups prefixed with "functiongraph.log.group" are filtered out.    |
-         |                                   | -  **Custom**: Select a custom log group and log stream. Log streams that are in the same enterprise project as your function. |
-         +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-         | Log Tag                           | You can use these tags to filter function logs in LTS. You can add 10 more tags.                                               |
-         |                                   |                                                                                                                                |
-         |                                   | Tag key/value: Enter a maximum of 64 characters. Only digits, letters, underscores (_), and hyphens (-) are allowed.           |
-         +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-
-   .. note::
-
-      -  If no agency is configured, the following message will be displayed when the function is triggered:
-
-         .. code-block::
-
-            Failed to access other services because no temporary AK, SK, or token has been obtained. Please set an agency.
+   -  **Runtime**: Select a runtime to compile the function. Default: **Python 3.6**. You can select another runtime.
 
 
    .. figure:: /_static/images/en-us_image_0000001679586957.png

@@ -20,7 +20,7 @@ Runtime
 
 The runtime provides an execution environment for the corresponding programming language to pass function invocation events, context information, and responses.
 
-For supported runtimes, see .
+FunctionGraph currently supports Node.js, Python, Java, Go, C#, PHP, and custom runtimes.
 
 Synchronous Invocation
 ----------------------
@@ -35,7 +35,7 @@ Clients do not care about the function invocation results of their requests. Aft
 Trigger
 -------
 
-A trigger is an event that triggers function execution.
+A trigger is an event that triggers function execution. Triggers can also be used to trigger functions when specified cloud service events occur.
 
 Single-Instance Multi-Concurrency
 ---------------------------------

@@ -13,7 +13,7 @@ If synchronous or asynchronous invocation fails, do as follows:
 
 -  Asynchronous invocation
 
-   You can set the maximum number of retries and the maximum message validity period (up to 24 hours) by referring to :ref:`Configuring Asynchronous Execution Notification <functiongraph_01_0390_03>`. FunctionGraph will retry a function based on these two parameters.
+   You can set the maximum number of retries and the maximum message validity period (up to 24 hours) by referring to :ref:`Configuring Asynchronous Notification Policy <functiongraph_01_0390_03>`. FunctionGraph will retry a function based on these two parameters.
 
 Idempotency
 -----------

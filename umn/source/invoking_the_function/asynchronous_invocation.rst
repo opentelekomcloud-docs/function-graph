@@ -16,7 +16,6 @@ When a client triggers a function, FunctionGraph persists the request and sends 
       ============= ===============
       SMN           Asynchronous
       OBS           Asynchronous
-      DIS           Asynchronous
       Timer         Asynchronous
       LTS           Asynchronous
       CTS           Asynchronous
@@ -24,7 +23,7 @@ When a client triggers a function, FunctionGraph persists the request and sends 
       DMS for Kafka Asynchronous
       ============= ===============
 
--  APIG and APIG (dedicated) triggers can be configured for asynchronous invocation on their console. You can also use the asynchronous execution API instead. In this scenario, the maximum execution duration of a function is 12 hours (configured in the whitelist).
+-  APIG (dedicated) triggers can be configured for asynchronous invocation on their console. You can also use the asynchronous execution API instead. In this scenario, the maximum execution duration of a function is 12 hours (configured in the whitelist).
 
    .. note::
 
@@ -32,7 +31,7 @@ When a client triggers a function, FunctionGraph persists the request and sends 
 
 **Example**
 
-The following procedure uses the APIG trigger of a function as an example.
+The following procedure uses the APIG trigger of a function as an example. For details about how to create an APIG trigger, see :ref:`Using an APIG (Dedicated) Trigger <functiongraph_01_0204>`.
 
 #. Go to the function details page, and choose **Configuration** > **Triggers**.
 
@@ -44,18 +43,18 @@ The following procedure uses the APIG trigger of a function as an example.
 
       **Figure 1** Clicking a trigger name
 
-#. Click **Edit** in the upper right.
+#. Click **Modify** in the upper right.
 
 
-   .. figure:: /_static/images/en-us_image_0000001402931181.png
-      :alt: **Figure 2** Clicking Edit
+   .. figure:: /_static/images/en-us_image_0000002357971441.png
+      :alt: **Figure 2** Clicking Modify
 
-      **Figure 2** Clicking Edit
+      **Figure 2** Clicking Modify
 
-#. Click **Next** until the **Define Backend Request** page is displayed. Then change **Invocation Mode** to **Asynchronous**.
+#. Click **Next** until the **Backend Configuration** page is displayed. Then change **Invocation Mode** to **Asynchronous**.
 
 
-   .. figure:: /_static/images/en-us_image_0000001403331673.png
+   .. figure:: /_static/images/en-us_image_0000002357973433.png
       :alt: **Figure 3** Changing the invocation mode
 
       **Figure 3** Changing the invocation mode

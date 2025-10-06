@@ -1,6 +1,6 @@
-:original_name: en-us_topic_0000002092946253.html
+:original_name: functiongraph_01_0001.html
 
-.. _en-us_topic_0000002092946253:
+.. _functiongraph_01_0001:
 
 Change History
 ==============
@@ -10,7 +10,12 @@ Change History
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | Released On                       | Description                                                                                                                                                                              |
    +===================================+==========================================================================================================================================================================================+
-   | 2025-02-27                        | #. Added the VPC CIDR block during VPC configuration. For details, see :ref:`Configuring the VPC CIDR Block <functiongraph_01_0222__en-us_topic_0000001298507413_fig5838194095016>`.     |
+   | 2025-09-16                        | Modified the test event in the :ref:`Online Debugging <functiongraph_01_0302>` section.                                                                                                  |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | 2025-05-28                        | #. Added :ref:`Configuring Class Isolation and Pre-stop for Java Functions <functiongraph_01_0418>`.                                                                                     |
+   |                                   | #. Updated the runtime version in :ref:`What Runtimes Does FunctionGraph Support? <functiongraph_03_0260>`.                                                                              |
+   +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | 2025-02-27                        | #. Added the VPC CIDR block during VPC configuration. For details, see :ref:`Configuring the VPC CIDR Block <functiongraph_01_0222__en-us_topic_0000001298507413_li1099612128246>`.      |
    |                                   | #. Added :ref:`Using a RocketMQ Trigger <functiongraph_01_0394>`.                                                                                                                        |
    |                                   | #. Added :ref:`advanced setting <functiongraph_01_1441__en-us_topic_0000001251907924_li183661110102712>` parameters for creating a function.                                             |
    +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

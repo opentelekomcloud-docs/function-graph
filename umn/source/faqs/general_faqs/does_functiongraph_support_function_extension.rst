@@ -7,4 +7,4 @@ Does FunctionGraph Support Function Extension?
 
 FunctionGraph has integrated non-standard libraries such as redis, http, and obs_client. You can directly use these libraries when developing functions.
 
-Alternatively, use your own dependencies. For more information, see :ref:`Dependency Management <functiongraph_01_0391>`.
+Alternatively, use your own dependencies. For more information, see :ref:`Configuring Dependencies <functiongraph_01_0391>`.
