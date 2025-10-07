@@ -10,7 +10,7 @@ Function Management
 
 FunctionGraph provides console-based function management.
 
--  The Node.js, Java, Python, Go, PHP, and custom runtimes are supported. :ref:`Table 1 <functiongraph_01_0200_0__table10794101711416>` provides the details.
+-  The Node.js, Java, Python, Go, C#, PHP, and custom runtimes are supported. :ref:`Table 1 <functiongraph_01_0200_0__table10794101711416>` provides the details.
 
    .. note::
 
@@ -25,7 +25,7 @@ FunctionGraph provides console-based function management.
       ======= ====================================================
       Node.js 6.10, 8.10, 10.16, 12.13, 14.18, 16.17, 18.15, 20.15
       Python  2.7, 3.6, 3.9, 3.10, 3.12
-      Java    8.0, 11, 17, 21
+      Java    8, 11, 17, 21
       Go      1.x
       C#      .NET Core 2.1, .NET Core 3.1, .NET Core 6.0
       PHP     7.3, 8.3
@@ -58,30 +58,38 @@ FunctionGraph provides console-based function management.
       | Custom  | Supported           | Supported            | Not supported        | Supported                     |
       +---------+---------------------+----------------------+----------------------+-------------------------------+
 
-Trigger
--------
+.. _functiongraph_01_0200_0__section327204091911:
 
-:ref:`Table 3 <functiongraph_01_0200_0__table1316993416219>` lists the invocation modes for different trigger types.
+Function Triggers
+-----------------
 
-.. _functiongraph_01_0200_0__table1316993416219:
+:ref:`Table 3 <functiongraph_01_0200_0__table134424315184>` lists the invocation modes for different trigger types.
 
-.. table:: **Table 3** Function invocation modes
+.. _functiongraph_01_0200_0__table134424315184:
 
-   ============================================== ========================
-   Trigger                                        Function Invocation Mode
-   ============================================== ========================
-   SMN trigger                                    Asynchronous invocation
-   APIG trigger                                   Synchronous invocation
-   OBS trigger                                    Asynchronous invocation
-   Data Ingestion Service (DIS) trigger           Asynchronous invocation
-   Timer trigger                                  Asynchronous invocation
-   Log Tank Service (LTS) trigger                 Asynchronous invocation
-   Cloud Trace Service (CTS) trigger              Asynchronous invocation
-   Document Database Service (DDS) trigger        Asynchronous invocation
-   Kafka trigger                                  Asynchronous invocation
-   Distributed Message Service (DMS) for Kafka    Synchronous invocation
-   Distributed Message Service (DMS) for RocketMQ Synchronous invocation
-   ============================================== ========================
+.. table:: **Table 3** Function trigger invocation
+
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Trigger                           | Invocation Mode                                                                                                                                                   |
+   +===================================+===================================================================================================================================================================+
+   | API Gateway (Dedicated)           | Synchronous invocation is used by default. You can change it to asynchronous invocation. For details, see :ref:`Asynchronous Invocation <functiongraph_01_1062>`. |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Timer                             | Synchronous (default)                                                                                                                                             |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Cloud Trace Service (CTS)         | Asynchronous (default and cannot be changed)                                                                                                                      |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Document Database Service (DDS)   | Asynchronous (default and cannot be changed)                                                                                                                      |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | DMS (for Kafka)                   | Asynchronous (default and cannot be changed)                                                                                                                      |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Kafka (Open-Source)               | Asynchronous (default and cannot be changed)                                                                                                                      |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Log Tank Service (LTS)            | Asynchronous (default and cannot be changed)                                                                                                                      |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | Simple Message Notification (SMN) | Asynchronous (default and cannot be changed)                                                                                                                      |
+   +-----------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. _functiongraph_01_0200_0__section382816599214:
 
 Logs and Metrics
 ----------------
@@ -106,7 +114,7 @@ The initializer interface is introduced to:
 HTTP Functions
 --------------
 
-You can set **Function Type** to **HTTP Function** on the function creation page. HTTP functions are designed to optimize web services. You can send HTTP requests to URLs to trigger function execution. HTTP functions support APIG and API Connect (APIC) triggers only.
+You can set **Function Type** to **HTTP Function** on the function creation page. HTTP functions are designed to optimize web services. You can send HTTP requests to URLs to trigger function execution. HTTP functions support APIG triggers only.
 
 Custom Images
 -------------

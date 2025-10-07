@@ -5,10 +5,6 @@
 Configuring a Log Group and Log Stream
 ======================================
 
-.. note::
-
-   This feature is supported only by FunctionGraph V2.
-
 Introduction
 ------------
 

@@ -21,7 +21,7 @@ Feature Overview
 
 **1. Write code.**
 
-Write code in Node.js, Python, Java, C#, PHP, or Go. For details, see the *FunctionGraph Developer Guide*.
+Write code in Node.js, Python, Java, C#, PHP, Go, or Custom runtime. For details, see the *FunctionGraph Developer Guide*.
 
 **2. Upload code.**
 
@@ -29,7 +29,7 @@ Currently, you can edit code inline, upload a ZIP or JAR file, or obtain a ZIP f
 
 **3. Trigger functions by API calls or cloud service events.**
 
-Call RESTful APIs or use cloud service event sources to trigger function execution and generate instances to implement service functions.
+Call RESTful APIs or use cloud service event sources to trigger function execution and generate instances to implement service functions. For details, see :ref:`Function Triggers <functiongraph_01_0200_0__section327204091911>`.
 
 **4. Auto scaling is implemented.**
 
@@ -37,12 +37,12 @@ During function execution, FunctionGraph scales automatically based on the numbe
 
 **5. View logs.**
 
-View run logs of functions as FunctionGraph is interconnected with Log Tank Service (LTS). For details, see :ref:`Querying Function Logs <functiongraph_01_0170>`.
+View run logs of function as FunctionGraph is interconnected with Log Tank Service (LTS). For details, see :ref:`Logs and Metrics <functiongraph_01_0200_0__section382816599214>`.
 
 **6. View monitoring information.**
 
-View graphical monitoring information. FunctionGraph is interconnected with Application Operations Management (AOM).
+Monitor function information in graphics as FunctionGraph is interconnected with Application Operations Management (AOM). For details, see :ref:`Logs and Metrics <functiongraph_01_0200_0__section382816599214>`.
 
 **7. Billing mode**
 
-After a function is executed, you will be billed based on the number of function execution requests and execution duration.
+After the function execution is complete, you will be billed based on the number of requests and the execution duration. For details, see Billing Overview.

@@ -8,6 +8,7 @@ General FAQs
 -  :ref:`What Is FunctionGraph? <functiongraph_03_0110>`
 -  :ref:`Do I Need to Apply for Any Compute, Storage, or Network Services When Using FunctionGraph? <functiongraph_03_0120>`
 -  :ref:`Do I Need to Deploy My Code After Programming? <functiongraph_03_0160>`
+-  :ref:`What Runtimes Does FunctionGraph Support? <functiongraph_03_0260>`
 -  :ref:`How Much Disk Space Is Allocated to Each FunctionGraph Function? <functiongraph_03_0170>`
 -  :ref:`Does FunctionGraph Support Function Versioning? <functiongraph_03_0240>`
 -  :ref:`How Does a Function Read or Write Files? <functiongraph_03_0330>`
@@ -45,6 +46,7 @@ General FAQs
    what_is_functiongraph
    do_i_need_to_apply_for_any_compute_storage_or_network_services_when_using_functiongraph
    do_i_need_to_deploy_my_code_after_programming
+   what_runtimes_does_functiongraph_support
    how_much_disk_space_is_allocated_to_each_functiongraph_function
    does_functiongraph_support_function_versioning
    how_does_a_function_read_or_write_files

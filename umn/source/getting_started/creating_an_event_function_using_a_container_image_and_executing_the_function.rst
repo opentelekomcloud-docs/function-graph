@@ -5,21 +5,22 @@
 Creating an Event Function Using a Container Image and Executing the Function
 =============================================================================
 
-This section uses the creation of an event function using a container image as an example to describe how to create and test a container image function. You need to implement an HTTP server in the image and listen to port **8000** to receive requests. By default, the request path **/init** is the function initialization entry. Implement it as required. The request path **/invoke** is the function execution entry where trigger events are processed. For details about request parameters, see section "Supported Event Sources".
+This section uses the creation of an event function using a container image as an example to describe how to create and test a container image function.
+
+You need to implement an HTTP server in the image and listen to port **8000** to receive requests. By default, the request path **/init** is the function initialization entry. Implement it as required. The request path **/invoke** is the function execution entry where trigger events are processed. For details about request parameters, see section "Supported Event Sources". Note: You can use any base image.
 
 Constraints
 -----------
 
-#. You can use any base image.
-#. In the cloud environment, UID 1003 and GID 1003 are used to start the container by default. The two IDs can be modified by choosing **Configuration** > **Basic Settings** > **Container Image Override** on the function details page. They cannot be **root** or a reserved ID.
-#. If the basic image of the Alpine version is used, run the **addgroup** and **adduser** commands.
+-  In the cloud environment, UID 1003 and GID 1003 are used to start the container by default. The two IDs can be modified by choosing **Configuration** > **Basic Settings** > **Container Image Override** on the function details page. They cannot be **root** or a reserved ID.
+-  If the base image of the Alpine version is used, run the **addgroup** and **adduser** commands.
 
 Prerequisites
 -------------
 
 #. Grant the FunctionGraph operation permissions to the user.
 
-   To perform the operations described in this section, ensure that you have the **FunctionGraph FullAccess** permissions, that is, all permissions for FunctionGraph. For more information, see :ref:`Permissions Management <functiongraph_01_0160_0>`.
+   To perform the operations described in this section, ensure that you have the **FunctionGraph FullAccess** permissions, that is, all permissions for FunctionGraph. For more information, see section **"Permissions Management"**.
 
 Step 1: Create an Image
 -----------------------
@@ -193,8 +194,8 @@ Step 4: Create a Function
 -------------------------
 
 #. In the left navigation pane of the management console, choose **Compute** > **FunctionGraph**. On the FunctionGraph console, choose **Functions** > **Function List** from the navigation pane.
-#. Click **Create Function** in the upper right corner and choose **Container Image**.
-#. Set the basic information.
+#. Click **Create Function** in the upper right corner. On the displayed page, select **Container Image** for creation mode.
+#. Set the basic function information.
 
    -  **Function Type**: Select **Event Function**.
 
@@ -202,20 +203,21 @@ Step 4: Create a Function
 
       **Regions are geographic areas isolated from each other. Resources are region-specific and cannot be used across regions through internal network connections. For low network latency and quick resource access, select the nearest region.**
 
-   -  **Function Name**: Enter **custom_container_event**.
+   -  **Function Name**: Enter **custom_container_http**.
 
    -  **Enterprise Project**: The default value is **default**. You can select the created enterprise project.
 
       Enterprise projects let you manage cloud resources and users by project.
 
-   -  **Agency**: Select an agency with the **SWR Admin** permission. If no agency is available, create one by referring to :ref:`Creating an Agency <functiongraph_01_0920>`
+   -  **Agency**: Select an agency with the **SWR Admin** permission. If no agency is available, create one by referring to :ref:`Creating an Agency <functiongraph_01_0920>`.
 
-   -  **Container Image**: Enter the image uploaded to SWR.
+   -  **Container Image**: Enter the image uploaded to SWR in :ref:`step 3 <functiongraph_04_0103__section15137197135915>`.
 
-#. (Optional) Override the container image.
+#. (Optional) Set container image overriding parameters.
 
    -  **CMD**: container startup command. Example: **/bin/sh**. If no command is specified, the entrypoint or CMD in the image configuration will be used.
    -  **Args**: container startup parameter. Example: **-args,value1**. If no argument is specified, CMD in the image configuration will be used.
+   -  **Working Dir**: working directory where a container runs. If no directory is specified, the directory in the image configuration will be used. The directory must start with a slash (/).
    -  **User ID**: Enter the user ID.
    -  **Group ID**: Enter the user group ID.
 

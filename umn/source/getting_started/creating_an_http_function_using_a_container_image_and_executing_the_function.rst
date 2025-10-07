@@ -5,12 +5,14 @@
 Creating an HTTP Function Using a Container Image and Executing the Function
 ============================================================================
 
-This section uses the creation of an HTTP function using a container image as an example to describe how to create and test a container image function. In this example, implement an HTTP server in the image and listen on **port 8000** for requests. **(Do not change port 8000 in the examples provided in this section.)** HTTP functions support only APIG triggers.
+This section uses the creation of an HTTP function using a container image as an example to describe how to create and test a container image function.
+
+In this example, implement an HTTP server in the image and listen on **port 8000** for requests. **(Do not change port 8000 in the examples provided in this section.)** Note: You can use any base image.
 
 Constraints
 -----------
 
--  You can use any base image.
+-  HTTP functions support only APIC/APIG triggers.
 -  In the cloud environment, UID 1003 and GID 1003 are used to start the container by default. The two IDs can be modified by choosing **Configuration** > **Basic Settings** > **Container Image Override** on the function details page. They cannot be **root** or a reserved ID.
 -  **Do not change port 8000 in the example HTTP function.**
 -  If the basic image of the Alpine version is used, run the **addgroup** and **adduser** commands.
@@ -20,7 +22,7 @@ Prerequisites
 
 #. Grant the FunctionGraph operation permissions to the user.
 
-   To perform the operations described in this section, ensure that you have the **FunctionGraph FullAccess** permissions, that is, all permissions for FunctionGraph. For more information, see :ref:`Permissions Management <functiongraph_01_0160_0>`.
+   To perform the operations described in this section, ensure that you have the **FunctionGraph FullAccess** permissions, that is, all permissions for FunctionGraph. For more information, see section **"Permissions Management"**.
 
 Step 1: Create an Image
 -----------------------
@@ -33,7 +35,7 @@ Take the Linux x86 64-bit OS as an example. (No system configuration is required
 
       mkdir custom_container_http_example && cd custom_container_http_example
 
-2. Implement an HTTP server. Node.js is used as an example. For details about other languages, see :ref:`Creating an HTTP Function <functiongraph_01_1442>`.
+2. Implement an HTTP server. Node.js is used as an example. For details about other languages, see *FunctionGraph Developer Guide*.
 
    Create the **main.js** file to introduce the Express framework, receive POST requests, print the request body as standard output, and return "Hello FunctionGraph, method POST" to the client.
 
@@ -178,9 +180,9 @@ Step 3: Upload the Image
 Step 4: Create a Function
 -------------------------
 
-#. In the left navigation pane of the management console, choose **Compute** > **FunctionGraph**. On the FunctionGraph console, choose **Functions** > **Function List** from the navigation pane.
-#. Click **Create Function** in the upper right corner and choose **Container Image**.
-#. Set the basic information.
+#. Log in to the FunctionGraph console. In the navigation pane, choose **Functions** > **Function List**.
+#. Click **Create Function** in the upper right corner. On the displayed page, select **Container Image** for creation mode.
+#. Set the basic function information.
 
    -  **Function Type**: Select **HTTP Function**.
 
@@ -198,10 +200,11 @@ Step 4: Create a Function
 
    -  **Container Image**: Enter the image uploaded to SWR in :ref:`step 3 <functiongraph_04_0103__section15137197135915>`.
 
-#. (Optional) Override the container image.
+#. (Optional) Set container image overriding parameters.
 
    -  **CMD**: container startup command. Example: **/bin/sh**. If no command is specified, the entrypoint or CMD in the image configuration will be used.
    -  **Args**: container startup parameter. Example: **-args,value1**. If no argument is specified, CMD in the image configuration will be used.
+   -  **Working Dir**: working directory where a container runs. If no directory is specified, the directory in the image configuration will be used. The directory must start with a slash (/).
    -  **User ID**: Enter the user ID.
    -  **Group ID**: Enter the user group ID.
 

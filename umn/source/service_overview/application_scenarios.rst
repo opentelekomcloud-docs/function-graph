@@ -22,16 +22,6 @@ Services are executed in event-driven mode and resources are provisioned based o
    -  Files are uploaded to OBS to trigger file processing functions.
    -  You will be billed only for resources used to process files as needed (you are not billed for idle resources during lows in demand).
 
--  **Real-time data stream processing**
-
-   FunctionGraph works with DIS to process data streams in real time. FunctionGraph supports application activity tracking, sequential transaction processing, data stream analysis, data sorting, metric generation, log filtering, indexing, social media analysis, and IoT device data telemetry and metering.
-
-   Advantages:
-
-   -  Data is collected by means of DIS streams to trigger data processing functions.
-   -  FunctionGraph automatically allocates resources to run more function instances as the number of received requests increases.
-   -  You will be billed only for resources used to process files as needed (you are not billed for idle resources during lows in demand).
-
 Scenario 2: Web Applications
 ----------------------------
 

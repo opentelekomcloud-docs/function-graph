@@ -9,7 +9,6 @@ Service Overview
 -  :ref:`Product Features <functiongraph_01_0200_0>`
 -  :ref:`Product Advantages <functiongraph_01_0180_0>`
 -  :ref:`Application Scenarios <functiongraph_01_0140_0>`
--  :ref:`Function Types <en-us_topic_0000001257203581>`
 -  :ref:`Notes and Constraints <functiongraph_01_0150>`
 -  :ref:`Permissions Management <functiongraph_01_0160_0>`
 -  :ref:`Concepts <functiongraph_02_1005>`
@@ -23,7 +22,6 @@ Service Overview
    product_features
    product_advantages
    application_scenarios
-   function_types/index
    notes_and_constraints
    permissions_management
    concepts

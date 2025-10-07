@@ -8,14 +8,14 @@ FunctionGraph - User Guide
    service_overview/index
    getting_started/index
    before_you_start/index
-   building_functions/index
+   creating_a_function/index
    configuring_functions/index
    online_debugging
-   creating_triggers/index
+   configuring_triggers/index
    invoking_the_function/index
-   monitoring/index
-   function_management
-   dependency_management/index
-   reserved_instance_management
+   viewing_metrics_and_configuring_alarms/index
+   managing_functions
+   configuring_dependencies/index
+   configuring_reserved_instances
    faqs/index
    change_history

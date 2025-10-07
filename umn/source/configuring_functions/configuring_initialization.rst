@@ -57,4 +57,4 @@ Initializing a Function
    .. note::
 
       -  Set the initializer in the same way as the handler. For example, for a Node.js or Python function, set an initializer name in the format of *[file name]*.\ *[initialization function name]*.
-      -  For details about the function code configuration, see :ref:`Creating a Deployment Package <functiongraph_01_0152>`.
+      -  For details about the function code configuration, see :ref:`Configuring Code <functiongraph_01_0152>`.

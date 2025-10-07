@@ -12,7 +12,7 @@ Prerequisites
 
 #. Grant the FunctionGraph operation permissions to the user.
 
-   To perform the operations described in this section, ensure that you have the **FunctionGraph FullAccess** permissions, that is, all permissions for FunctionGraph. For more information, see :ref:`Permissions Management <functiongraph_01_0160_0>`.
+   To perform the operations described in this section, ensure that you have the **FunctionGraph FullAccess** permissions, that is, all permissions for FunctionGraph. For more information, see section **"Permissions Management"**.
 
 Step 1: Create a Function
 -------------------------
@@ -21,29 +21,47 @@ Step 1: Create a Function
 
 #. Click **Create Function** in the upper right corner and choose **Create from scratch**.
 
-#. On the displayed page, enter **HelloWorld** for **Function Name** and retain the default values for other parameters by referring to :ref:`Figure 1 <functiongraph_04_0101__fig290685013818>`, and click **Create Function**. The following describes the parameters.
+#. Configure basic function information by referring to :ref:`Figure 1 <functiongraph_04_0101__fig290685013818>`. Then, click **Create Function**.
 
-   -  **Function Type**: Select **Event Function**.
+   .. table:: **Table 1** Parameters required for creating a function
 
-   -  **Region**: The default value is used. You can select other regions.
-
-      **Regions are geographic areas isolated from each other. Resources are region-specific and cannot be used across regions through internal network connections. For low network latency and quick resource access, select the nearest region.**
-
-   -  **Function Name**: enter **HelloWorld**.
-
-   -  **Enterprise Project**: The default value is **default**. You can select the created enterprise project.
-
-      Enterprise projects let you manage cloud resources and users by project.
-
-   -  **Agency**: By default, no agency is used. You can select an existing agency.
-
-      Specify an agency if you want to delegate FunctionGraph to access other cloud services, such as LTS and VPC.
-
-   -  **Runtime**: Select a runtime to compile the function. Default: **Node.js 16.17**. You can select another runtime.
+      +-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Parameter             | Description                                                                                                                                                                                                                  | Example Value         |
+      +=======================+==============================================================================================================================================================================================================================+=======================+
+      | Function Type         | Select **Event Function**.                                                                                                                                                                                                   | Event Function        |
+      |                       |                                                                                                                                                                                                                              |                       |
+      |                       | An event function is triggered by a specific event, which is usually a request event in JSON format.                                                                                                                         |                       |
+      +-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Region                | Select the region where the function is located.                                                                                                                                                                             | eu-de                 |
+      |                       |                                                                                                                                                                                                                              |                       |
+      |                       | Regions are geographic areas isolated from each other. Resources are region-specific and cannot be used across regions through internal network connections. Select a region near you to ensure the lowest latency possible. |                       |
+      +-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Function Name         | Enter a function name. The naming rules are as follows:                                                                                                                                                                      | HelloWorld            |
+      |                       |                                                                                                                                                                                                                              |                       |
+      |                       | -  Consists of 1 to 60 characters, and can contain letters, digits, hyphens (-), and underscores (_).                                                                                                                        |                       |
+      |                       | -  Start with a letter and end with a letter or digit.                                                                                                                                                                       |                       |
+      +-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Enterprise Project    | Select the enterprise project to which the function belongs. Enterprise projects let you manage cloud resources and users by project.                                                                                        | default               |
+      |                       |                                                                                                                                                                                                                              |                       |
+      |                       | The default value is **default**. You can select the created enterprise project.                                                                                                                                             |                       |
+      +-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Agency                | Select an agency for the function. An agency is used to authorize FunctionGraph to access other cloud services. If FunctionGraph does not access any cloud service, you do not need to select an agency.                     | Use no agency         |
+      |                       |                                                                                                                                                                                                                              |                       |
+      |                       | By default, **Use no agency** is used. You can select an existing agency.                                                                                                                                                    |                       |
+      +-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Permission Policies   | **This parameter is displayed only when an agency is selected.**                                                                                                                                                             | ``-``                 |
+      |                       |                                                                                                                                                                                                                              |                       |
+      |                       | For details about how to adjust the permission policies on the IAM console, see section **"Configuring Agency Permissions"**.                                                                                                |                       |
+      +-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
+      | Runtime               | Select a runtime to compile the function.                                                                                                                                                                                    | Node.js 16.17         |
+      |                       |                                                                                                                                                                                                                              |                       |
+      |                       | -  CloudIDE supports only online editing of Node.js, Python, PHP, and custom runtimes.                                                                                                                                       |                       |
+      |                       | -  After a function is created, the runtime language cannot be changed.                                                                                                                                                      |                       |
+      +-----------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+
 
    -  **Advanced Settings**: **Collect Logs** is disabled by default. If it is enabled, function execution logs will be reported to Log Tank Service (LTS). You will be billed for log management on a pay-per-use basis.
 
-      .. table:: **Table 1** Parameters for configuring Collect Logs
+      .. table:: **Table 2** Parameters for configuring Collect Logs
 
          +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
          | Parameter                         | Description                                                                                                                    |

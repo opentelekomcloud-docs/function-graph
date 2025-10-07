@@ -5,4 +5,4 @@
 Does FunctionGraph Support Function Versioning?
 ===============================================
 
-Yes. For details, see :ref:`Managing Versions <functiongraph_01_0180>`.
+Yes. For details, see :ref:`Configuring Versions <functiongraph_01_0180>`.

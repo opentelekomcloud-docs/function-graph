@@ -16,7 +16,7 @@ Notes and Constraints
 
 If an IAM user granted the **FunctionGraph FullAccess** permission has no permission to create a certain type of trigger or use a certain function, the relevant service or function does not support fine-grained authentication. In this case, grant the admin permission for this service or function to the user. These services and functions include:
 
--  CTS, DIS, and APIG: These do not support fine-grained authentication. Add the admin permission for them.
+-  CTS and APIG: These do not support fine-grained authentication. Add the admin permission for them.
 -  SMN: This supports fine-grained authentication in some regions. If needed, add the admin permission for this service.
 
 For more information about the permissions required to use these triggers and relevant functions, see :ref:`Table 2 <functiongraph_01_0160_0__table10526732619>`.
@@ -81,8 +81,6 @@ You can grant users permissions by using roles and policies.
    | DDS                                            | dds:instance:get                  |
    |                                                |                                   |
    |                                                | dds:instance:list                 |
-   +------------------------------------------------+-----------------------------------+
-   | DIS                                            | dis:streams:list                  |
    +------------------------------------------------+-----------------------------------+
    | LTS                                            | lts:groups:create                 |
    |                                                |                                   |
