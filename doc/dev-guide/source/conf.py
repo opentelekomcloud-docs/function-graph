@@ -34,7 +34,7 @@ otcdocs_repo_name = 'opentelekomcloud-docs/function-graph'
 otcdocs_doc_environment = 'public'
 otcdocs_doc_link = '/function-graph/dev-guide/'
 otcdocs_doc_title = 'Developer Guide'
-otcdocs_doc_type = 'dev'
+otcdocs_doc_type = 'dev-guide'
 otcdocs_service_category = 'compute'
 otcdocs_service_title = 'FunctionGraph'
 otcdocs_service_type = 'fg'
@@ -113,7 +113,8 @@ html_copy_source = False
 # -- Options for PDF output --------------------------------------------------
 latex_documents = [
     ('index',
-     'fg-dev-guide.tex',u'FunctionGraph - Developer Guide',
+     'fg-dev-guide.tex',
+    u'FunctionGraph - Developer Guide',
      u'OpenTelekomCloud', 'manual'),
 ]
 
