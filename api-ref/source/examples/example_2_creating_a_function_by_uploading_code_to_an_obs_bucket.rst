@@ -66,7 +66,7 @@ Step 3: Call the Function Creation API to Create a Function Using the Link URL o
 
 URI: **POST /v2/**\ *{project_id}*\ **/fgs/functions**
 
-For details, see :ref:`Creating a Function <functiongraph_06_0108>`.
+For details about the API, see :ref:`Creating a Function <functiongraph_06_0108>`.
 
 -  Sample request
 
