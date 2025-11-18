@@ -10,25 +10,21 @@ Function
 
 This API is used to delete all triggers of a function.
 
-If a non-latest function version is specified, all triggers corresponding to the version will be deleted.
-
-If an alias is specified, all triggers corresponding to the alias will be deleted.
-
-If neither function versions nor aliases are specified or the latest version is specified, all triggers of the function (including all versions and aliases) will be deleted.
+If a non-latest function version is specified, all triggers corresponding to the version will be deleted. If an alias is specified, all triggers corresponding to the alias will be deleted. If neither function versions nor aliases are specified or the latest version is specified, all triggers of the function (including all versions and aliases) will be deleted.
 
 URI
 ---
 
 DELETE /v2/{project_id}/fgs/triggers/{function_urn}
 
-.. table:: **Table 1** Path Parameters
+.. table:: **Table 1** Path parameters
 
    +--------------+-----------+--------+-------------------------------------------------------------------------------------+
    | Parameter    | Mandatory | Type   | Description                                                                         |
    +==============+===========+========+=====================================================================================+
    | project_id   | Yes       | String | Project ID. For details, see :ref:`Obtaining a Project ID <functiongraph_06_0260>`. |
    +--------------+-----------+--------+-------------------------------------------------------------------------------------+
-   | function_urn | Yes       | String | Function URN. For details, see the function model description.                      |
+   | function_urn | Yes       | String | Function URN. For details, see the function model descriptions.                     |
    +--------------+-----------+--------+-------------------------------------------------------------------------------------+
 
 Request Parameters
@@ -36,17 +32,17 @@ Request Parameters
 
 .. table:: **Table 2** Request header parameters
 
-   +-----------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter       | Mandatory       | Type            | Description                                                                                                                                   |
-   +=================+=================+=================+===============================================================================================================================================+
-   | X-Auth-Token    | Yes             | String          | User token.                                                                                                                                   |
-   |                 |                 |                 |                                                                                                                                               |
-   |                 |                 |                 | It can be obtained by calling the IAM API used to obtain a user token. The value of X-Subject-Token in the response header is the user token. |
-   +-----------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-   | Content-Type    | Yes             | String          | Message body type (format).                                                                                                                   |
-   |                 |                 |                 |                                                                                                                                               |
-   |                 |                 |                 | Default: **application/json**                                                                                                                 |
-   +-----------------+-----------------+-----------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------+
+   | Parameter       | Mandatory       | Type            | Description                                                                                                              |
+   +=================+=================+=================+==========================================================================================================================+
+   | X-Auth-Token    | Yes             | String          | User token.                                                                                                              |
+   |                 |                 |                 |                                                                                                                          |
+   |                 |                 |                 | The token can be obtained by calling the IAM API. The value of X-Subject-Token in the response header is the user token. |
+   +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------+
+   | Content-Type    | Yes             | String          | Message body type or format.                                                                                             |
+   |                 |                 |                 |                                                                                                                          |
+   |                 |                 |                 | Default value: **application/json**                                                                                      |
+   +-----------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------------------------------+
 
 Response Parameters
 -------------------
@@ -84,7 +80,7 @@ Response Parameters
    error_msg  String Error message.
    ========== ====== ==============
 
-**Status code: 404**
+**Status code**: **404**
 
 .. table:: **Table 6** Response body parameters
 

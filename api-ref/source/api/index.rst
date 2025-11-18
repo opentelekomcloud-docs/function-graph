@@ -2,8 +2,8 @@
 
 .. _functiongraph_06_1704:
 
-APIs
-====
+API
+===
 
 -  :ref:`Function Invocation <functioninvocation>`
 -  :ref:`Function Quotas <functionquotas>`

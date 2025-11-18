@@ -24,21 +24,21 @@ Trigger Type Model
 
 .. table:: **Table 1** Parameters in the trigger type model
 
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter                         | Description                                                                                                                    |
-   +===================================+================================================================================================================================+
-   | trigger_type_code                 | Trigger type code. Options: **SMN**, **APIG**, **TIMER**, **DMS**, **kafka**, **DDS**, **CTS**, **DIS**, **LTS**, and **OBS**. |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | display_name                      | Trigger type value.                                                                                                            |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | status                            | Trigger type status. Options:                                                                                                  |
-   |                                   |                                                                                                                                |
-   |                                   | -  **DISABLED**: The trigger is disabled.                                                                                      |
-   |                                   | -  **TEST**: The trigger is under test and invisible to clients.                                                               |
-   |                                   | -  **ACTIVE**: The trigger is available.                                                                                       |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | description                       | Trigger description.                                                                                                           |
-   +-----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | Parameter                         | Description                                                                                                           |
+   +===================================+=======================================================================================================================+
+   | trigger_type_code                 | Trigger type code. Options: **SMN**, **APIG**, **TIMER**, **DMS**, **kafka**, **DDS**, **CTS**, **LTS**, and **OBS**. |
+   +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | display_name                      | Trigger type value.                                                                                                   |
+   +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | status                            | Trigger type status. Options:                                                                                         |
+   |                                   |                                                                                                                       |
+   |                                   | -  **DISABLED**: The trigger is disabled.                                                                             |
+   |                                   | -  **TEST**: The trigger is under test and invisible to clients.                                                      |
+   |                                   | -  **ACTIVE**: The trigger is available.                                                                              |
+   +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+   | description                       | Trigger description.                                                                                                  |
+   +-----------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 Trigger Instance Model
 ----------------------
@@ -61,23 +61,23 @@ Trigger Instance Model
 
 .. table:: **Table 2** Parameters in the trigger instance model
 
-   +-------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | Parameter         | Description                                                                                                                    |
-   +===================+================================================================================================================================+
-   | trigger_id        | Trigger ID.                                                                                                                    |
-   +-------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | trigger_type_code | Trigger type code. Options: **SMN**, **APIG**, **TIMER**, **DMS**, **kafka**, **DDS**, **CTS**, **DIS**, **LTS**, and **OBS**. |
-   +-------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | event_type_code   | Event type code. This parameter is mandatory. It can be any non-null character string. This parameter is not used currently.   |
-   +-------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | status            | Trigger status. Options: **ACTIVE** and **DISABLED**.                                                                          |
-   +-------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | event_data        | Trigger data defined in JSON format.                                                                                           |
-   +-------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | last_updated_time | Time when the trigger was last updated.                                                                                        |
-   +-------------------+--------------------------------------------------------------------------------------------------------------------------------+
-   | created_time      | Time when the trigger was created.                                                                                             |
-   +-------------------+--------------------------------------------------------------------------------------------------------------------------------+
+   +-------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | Parameter         | Description                                                                                                                  |
+   +===================+==============================================================================================================================+
+   | trigger_id        | Trigger ID.                                                                                                                  |
+   +-------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | trigger_type_code | Trigger type code. Options: **SMN**, **APIG**, **TIMER**, **DMS**, **kafka**, **DDS**, **CTS**, **LTS**, and **OBS**.        |
+   +-------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | event_type_code   | Event type code. This parameter is mandatory. It can be any non-null character string. This parameter is not used currently. |
+   +-------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | status            | Trigger status. Options: **ACTIVE** and **DISABLED**.                                                                        |
+   +-------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | event_data        | Trigger data defined in JSON format.                                                                                         |
+   +-------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | last_updated_time | Time when the trigger was last updated.                                                                                      |
+   +-------------------+------------------------------------------------------------------------------------------------------------------------------+
+   | created_time      | Time when the trigger was created.                                                                                           |
+   +-------------------+------------------------------------------------------------------------------------------------------------------------------+
 
 Trigger Instance Data
 ---------------------
@@ -158,35 +158,6 @@ Trigger Instance Data
       | suffix                            | Suffix of an OBS object. This parameter is optional.                                                                                                                                                                                                                                                                               |
       +-----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
--  The data of a Data Ingestion Service (DIS) trigger is as follows:
-
-   .. code-block:: text
-
-      {
-      "stream_name": "dis-qYPJ",
-      "polling_interval": 30,
-      "batch_size": 100,
-      "sharditerator_type": "TRIM_HORIZON"
-      }
-
-   :ref:`Table 6 <functiongraph_06_0103__table797218531255>` describes the parameters of a DIS trigger.
-
-   .. _functiongraph_06_0103__table797218531255:
-
-   .. table:: **Table 6** Parameters of a DIS trigger
-
-      +--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | Parameter          | Description                                                                                                                                           |
-      +====================+=======================================================================================================================================================+
-      | stream_name        | Name of a stream. This parameter is mandatory.                                                                                                        |
-      +--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | polling_interval   | Pull period. This parameter is optional. Value range: 1-60. Default value: 30.                                                                        |
-      +--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | batch_size         | Number of data records that can be pulled from a specified stream. This parameter is optional. Value range: 1-10000. Default value: 100.              |
-      +--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-      | sharditerator_type | Options: TRIM_HORIZON (pulling data from the beginning of a stream) and LATEST (pulling data from the current position). This parameter is mandatory. |
-      +--------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 -  The data of an APIG trigger is as follows:
 
    .. code-block:: text
@@ -205,11 +176,11 @@ Trigger Instance Data
           "sl_domain":"string"
       }
 
-   :ref:`Table 7 <functiongraph_06_0103__table18282101120468>` describes the parameters of an APIG trigger.
+   :ref:`Table 6 <functiongraph_06_0103__table18282101120468>` describes the parameters of an APIG trigger.
 
    .. _functiongraph_06_0103__table18282101120468:
 
-   .. table:: **Table 7** Parameters of an APIG trigger
+   .. table:: **Table 6** Parameters of an APIG trigger
 
       +--------------+-------------------------------------------------------------------------------------------------------------------------+
       | Parameter    | Description                                                                                                             |
@@ -248,11 +219,11 @@ Trigger Instance Data
           "user_event": "string"
       }
 
-   :ref:`Table 8 <functiongraph_06_0103__table169831625017>` describes the parameters of a timer trigger.
+   :ref:`Table 7 <functiongraph_06_0103__table169831625017>` describes the parameters of a timer trigger.
 
    .. _functiongraph_06_0103__table169831625017:
 
-   .. table:: **Table 8** Parameters of a timer trigger
+   .. table:: **Table 7** Parameters of a timer trigger
 
       +-----------------------------------+------------------------------------------------------------------------------------------------------------------+
       | Parameter                         | Description                                                                                                      |
@@ -284,11 +255,11 @@ Trigger Instance Data
           }
       }
 
-   :ref:`Table 9 <functiongraph_06_0103__table866014421545>` describes the parameters of an LTS trigger.
+   :ref:`Table 8 <functiongraph_06_0103__table866014421545>` describes the parameters of an LTS trigger.
 
    .. _functiongraph_06_0103__table866014421545:
 
-   .. table:: **Table 9** Parameters of an LTS trigger
+   .. table:: **Table 8** Parameters of an LTS trigger
 
       +-----------+------------------------------------------------------------------------+
       | Parameter | Description                                                            |
@@ -307,11 +278,11 @@ Trigger Instance Data
           "operations": ["AAD:addprotocolrule:addProtocolRule", "BCS:baas-apiserver:scalePeers", "ARS:ars:setConfigArs"]
       }
 
-   :ref:`Table 10 <functiongraph_06_0103__table15406140191011>` describes the parameters of a CTS trigger.
+   :ref:`Table 9 <functiongraph_06_0103__table15406140191011>` describes the parameters of a CTS trigger.
 
    .. _functiongraph_06_0103__table15406140191011:
 
-   .. table:: **Table 10** Parameters of a CTS trigger
+   .. table:: **Table 9** Parameters of a CTS trigger
 
       +-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------+
       | Parameter                         | Description                                                                                                                                       |
@@ -335,7 +306,7 @@ Trigger Instance Data
               "batch_size": int,
       }
 
-   .. table:: **Table 11** Parameters of a DDS trigger
+   .. table:: **Table 10** Parameters of a DDS trigger
 
       =============== ========================================
       Parameter       Description
@@ -360,7 +331,7 @@ Trigger Instance Data
               "batch_size": int,
       }
 
-   .. table:: **Table 12** Parameters of a Kafka trigger
+   .. table:: **Table 11** Parameters of a Kafka trigger
 
       +------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
       | Parameter        | Description                                                                                                                             |

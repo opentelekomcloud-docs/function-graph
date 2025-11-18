@@ -9,6 +9,6 @@ FunctionGraph - API Reference
    api_overview
    calling_apis/index
    examples/index
-   apis/index
+   api/index
    appendix/index
    change_history
