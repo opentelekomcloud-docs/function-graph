@@ -40,6 +40,6 @@ Intelligence evolution requires various services to be integrated for quick roll
 
 Advantages:
 
--  FunctionGraph works with EI services for text recognition and content moderation to suit a wide range of scenarios - make adjustments whenever you need as demands change.
+-  FunctionGraph works with AI services for text recognition and content moderation to suit a wide range of scenarios - make adjustments whenever you need as demands change.
 -  You only need to apply for related services and write service code without having to provision or manage servers.
--  You will be billed only for function execution and used EI services without having to pay for idle resources when service demands are low.
+-  You will be billed only for function execution and used AI services without having to pay for idle resources when service demands are low.
